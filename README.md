@@ -17,4 +17,3 @@ Libraries used in this theme:
 * jQuery doc
 * 1140 grid system
 * reset.css
-* WordPress core Backup Script (not really part of the theme but I just had it laying around)
