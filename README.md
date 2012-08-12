@@ -9,6 +9,10 @@ The icons for the dock menu are retrieved dynamically based on the category name
 
 They were created by [Tassy](http://tassy.deviantart.com). Props and thanks to her.
 
+## Custom fields
+
+This theme makes use of the `subtitle` custom field on each of the posts. The subtitle appears next to the title of each of the posts, and as a sub-header to the page when seeing a post page.
+
 ## Third Party Libraries
 
 Libraries used in this theme:
