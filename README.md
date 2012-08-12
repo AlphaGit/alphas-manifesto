@@ -9,3 +9,12 @@ The icons for the dock menu are retrieved dynamically based on the category name
 
 They were created by [Tassy](http://tassy.deviantart.com). Props to her.
 
+## Third Party Libraries
+
+Libraries used in this theme:
+
+* jquery
+* jQuery doc
+* 1140 grid system
+* reset.css
+* WordPress core Backup Script (not really part of the theme but I just had it laying around)
