@@ -1,0 +1,372 @@
+/*
+Theme Name: Alpha's Manifesto
+Theme URI: http://alphasmanifesto.com/
+Description: 
+Author: Alpha
+Author URI: http://alphasmanifesto.com/
+Version: 0.1
+Tags: minimalist, black, white, red
+
+License:
+License URI:
+
+Some comments for the future.
+*/
+
+/* generic elements */
+
+body {
+    font: normal 1em/1.5 Georgia, serif;
+    line-height: 1.5em;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 1.5em;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+blockquote {
+    padding: 1em 1em 1em 2em;
+    background-color: #EEE;
+    background-image: url('openingQuotes.png'), url('closingQuotes.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: 1em 1em, bottom right;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* header styles */
+
+header {
+    background: #444;
+    -moz-box-shadow: 10px -5px 5px 10px #888;
+    -webkit-box-shadow: 10px -5px 5px 10px #888;
+    box-shadow: 10px -5px 5px 10px #888;
+}
+
+header h1 {
+    font-size: 3em;
+    line-height: 1em;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header h2 {
+    font-size: 1.2em;
+    color: #BBB;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#titleContainer>.row {
+    margin: 0 auto;
+}
+
+.title {
+    margin: 1em auto;
+    padding: 0.5em 0;
+}
+
+/* post styles */
+
+.post {
+    margin-top: 1em;
+}
+
+.post table td {
+	border: 1px solid black;
+	padding: 1em;
+}
+.post table {
+	border: 1px solid black;
+	margin: 1em 0;
+}
+
+.post table thead {
+	font-weight: bold;
+}
+
+article {
+    border-bottom: 2px solid #CCC;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    margin-top: 1em;    
+}
+
+article.row {
+    padding-top: 1em;
+}
+
+article h1 {
+    font-family: garamond, georgia, 'times new roman', serif;
+    font-size: 2em;
+    margin-top: 0em;
+}
+
+article h2 {
+    font-size: 1.6em;
+    font-family: garamond, georgia, 'times new roman', serif;
+    font-weight: bold;
+}
+
+article h3 {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.1em;
+}
+
+article .subtitle {
+    font-style: italic;
+}
+
+article h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+article pre {
+	font-family: Consolas, "Courier New", Courier, monospace;
+	overflow-x: scroll;
+	margin-bottom: 1em;
+}
+
+p, ul, ol, #post div { 
+    margin-bottom: 1em;
+}
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+/* post metadata */
+
+article .metadata, article .postLinks {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.tags, .commentCount {
+    border-top: 2px solid #CCC;
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+.share {
+    margin-top: 0.5em;
+}
+
+#logo {
+    text-align: center;
+}
+
+#logo img {
+    margin: 10px;
+    margin-top: 20px;
+    vertical-align: baseline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+	margin-bottom: 45px;
+}
+
+/* comment section */
+#comments h2 {
+    font-size: 1.6em;
+    font-family: garamond, georgia, 'times new roman', serif;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.comment {
+    margin-top: 1em;
+}
+
+.commentAvatar {
+    /*text-align: center;*/
+}
+
+.commentAuthor {
+    float: left;
+    margin-right: 1em; 
+    margin-bottom: 1em;
+    width: 100px;
+}
+
+.commentAuthor p {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4em;
+    font-size: 0.9em;
+}
+
+.commentAuthorName {
+    font-weight: bold;
+}
+
+#commentForm h3 {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.commentSeparator {
+    clear: both;
+}
+
+#comment {
+    width: 100%;
+    font: normal 1em/1.5 Georgia, serif;
+}
+
+p.commentFormComment {
+    margin-bottom: 0;
+}
+
+.form-submit {
+    margin-top: 0;
+}
+
+#commentSubmit {
+    margin-top: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 1.5em;
+}
+
+#commentForm label {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#commentform input[type=text] {
+    width: 100%;
+    font: normal 1em/1.5 Georgia, serif;
+}
+
+ul.children { /* TODO: Fix hierarchical comments */
+    padding: 0;
+}
+
+.searchForm {
+    padding-top: 20px;
+}
+
+.searchForm label {
+    color: #DDD;
+    display: none;
+}
+
+.wp-caption {
+	border: 1px solid 
+	rgb(170, 170, 170);
+	margin: 0 10px 10px 0;
+	background-color: 
+	rgb(238, 238, 238);
+	padding: 5px 0;
+	text-align: center;
+}
+
+.wp-caption-dd {
+	font-size: 0.7em;
+}
+
+#dockMenu {
+    position:fixed; 
+    bottom:1em; 
+    width:100%; 
+    display:none;
+}
+
+#dockMenu div.jqDockWrap {margin:0 auto 0 auto; padding-bottom: 1em;}
+#dockMenu div.jqDock {cursor:pointer; background-color: rgba(255, 255, 255, 0.5); }
+#dockMenu div.jqDockLabel {
+    font-weight:bold; 
+    color: black; 
+    white-space:nowrap; 
+    font-variant: small-caps;
+    cursor:pointer; 
+    bottom: -1em !IMPORTANT; /* style forced by jquery.jqdock  */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+article iframe {
+    width: 100%;
+}
+
+.twitter-tweet-rendered {
+    width: 100% !important;
+}
+
+@media screen and (max-width: 800px) {
+    /* hide dock menu */
+    #dockMenu, .jqDockWrap {
+        display: none;
+    }
+    
+    #logo { display: none; }
+    
+    #titleContainer .twocol.searchForm {
+        padding-top: 0;
+        padding-bottom: 1em;
+    }
+    
+    .searchForm label, .categories, .share  {
+        display: inline;
+    }
+    
+    .commentCount {
+        display: inline;
+        border-top: none;
+    }
+    
+    .permalink, .date, .time {
+        display: inline;
+        /*margin-right: 10px;*/
+    }
+    .permalink:after, .date:after, .time:after, .share:after {
+        content: " ―";
+    }
+    
+    .last.postLinks {
+        border-top: 2px solid #CCC;
+        padding-top: 1em;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    
+    footer {
+        margin-bottom: 0;
+    }
+}
