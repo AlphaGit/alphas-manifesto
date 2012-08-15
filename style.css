@@ -136,6 +136,10 @@ article h3 {
     font-size: 1.1em;
 }
 
+article hr {
+    margin: 2em auto;
+}
+
 article .subtitle {
     font-style: italic;
 }
