@@ -66,6 +66,7 @@
             
             // embed resize fix
             $('article iframe').removeAttr('width');
+			$('article video').removeAttr('width').removeAttr('height');
         });
     </script>
 </head>
