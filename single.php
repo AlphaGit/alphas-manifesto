@@ -79,7 +79,7 @@ $content_width = 745;
                 </div>
                 <div class="eightcol">
                     <hgroup class="title">
-                        <h1><a href="<?php echo $titleLink ?>"><?php echo $title ?></a></h1>
+                        <h1><?php echo $title ?></h1>
                         <?php if(strlen($pageSubtitle) > 0) { ?>
                             <h2><?php echo $pageSubtitle ?></h2>
                         <?php } ?>
