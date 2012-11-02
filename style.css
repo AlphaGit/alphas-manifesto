@@ -355,7 +355,7 @@ article iframe, article video {
         border-top: none;
     }
     
-    .permalink, .date, .time {
+    .permalink, .datetime {
         display: inline;
         /*margin-right: 10px;*/
     }
