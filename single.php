@@ -1,13 +1,11 @@
 <?php 
-$isSinglePost = is_single();
+$title = get_the_title();
+$headTitle = $title . " | ".get_bloginfo('name', 'Display');
 
-$title = $isSinglePost ? get_the_title() : get_bloginfo('name', 'Display');
-$headTitle = $title . ($isSinglePost ? " | ".get_bloginfo('name', 'Display') : "");
-
-$pageSubtitle = $isSinglePost ? get_post_meta(get_the_ID(), 'subtitle', true) : get_bloginfo('description', 'Display');
+$pageSubtitle = get_post_meta(get_the_ID(), 'subtitle', true);
 
 $blogLink = home_url();
-$titleLink = $isSinglePost ? get_permalink() : $blogLink;
+$titleLink = get_permalink();
 $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
 
 $content_width = 745;
@@ -98,16 +96,10 @@ $content_width = 745;
                   the_post(); ?>
             <article class="row">
                 <div class="metadata twocol">
-                    <div class="date"><?php the_time(get_option('date_format')); ?></div>
-                    <div class="time"><?php the_time() ?></div>
+                    <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime"><?php the_time(get_option('date_format')); ?><br/><?php the_time() ?></time>
                     <div class="categories"><?php the_category(', ') ?></div>
                 </div>
                 <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
-                    <?php if(!$isSinglePost) { ?>
-                        <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
-                        <p class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></p>
-                    <?php } ?>
-
                     <?php the_content(); ?>
                 </div>
                 <div class="twocol last postLinks">
@@ -137,23 +129,10 @@ $content_width = 745;
                 </div>
             </article>
             <?php 
-                  if($isSinglePost) {
-                      comments_template(); 
-                  }                
+              comments_template(); 
               endwhile; // while (have_posts())
         ?>
     </div>
-    <footer class="container">
-        <?php if(!$isSinglePost) { ?>
-        <div class="row">
-            <div class="twocol"></div>
-            <div class="eightcol">
-                <p><?php posts_nav_link(" &bull; ", "&laquo; Posts posteriores", "Posts anteriores &raquo;"); ?></p>
-            </div>
-            <div class="twocol last"></div>
-        </div>
-        <?php } ?>
-    </footer>
     <nav>
         <?php
         $categories = get_categories(array(
@@ -175,6 +154,8 @@ $content_width = 745;
             ?>
         </ul>
     </nav>
-    <?php wp_footer(); ?> 
+    <footer>
+        <?php wp_footer(); ?> 
+    </footer>
 </body>
 </html>

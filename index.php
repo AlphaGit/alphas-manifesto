@@ -1,13 +1,10 @@
 <?php 
-    $isSinglePost = is_single();
-   
-    $title = $isSinglePost ? get_the_title() : get_bloginfo('name', 'Display');
-    $headTitle = $title . ($isSinglePost ? " | ".get_bloginfo('name', 'Display') : "");
+    $title = get_bloginfo('name', 'Display');
         
-    $pageSubtitle = $isSinglePost ? get_post_meta(get_the_ID(), 'subtitle', true) : get_bloginfo('description', 'Display');
+    $pageSubtitle = get_bloginfo('description', 'Display');
 
     $blogLink = home_url();
-    $titleLink = $isSinglePost ? get_permalink() : $blogLink;
+    $titleLink = $blogLink;
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
     
     $content_width = 745;
@@ -15,7 +12,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title><?php echo $headTitle ?></title>
+    <title><?php echo $title ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
@@ -97,15 +94,12 @@
         <?php while(have_posts()) : the_post(); ?>
             <article class="row">
                 <div class="metadata twocol">
-                    <div class="date"><?php the_time(get_option('date_format')); ?></div>
-                    <div class="time"><?php the_time() ?></div>
+                    <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime"><?php the_time(get_option('date_format')); ?><br/><?php the_time() ?></time>
                     <div class="categories"><?php the_category(', ') ?></div>
                 </div>
                 <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
-                    <?php if(!$isSinglePost) { ?>
-                        <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
-                        <p class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></p>
-                    <?php } ?>
+                    <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
+                    <p class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></p>
 
                     <?php the_content(); ?>
                 </div>
@@ -135,15 +129,10 @@
                     ?></p></div>
                 </div>
             </article>
-            <?php 
-                if($isSinglePost) {
-                    comments_template(); 
-                }                
-            endwhile; // while (have_posts())
+            <?php  endwhile; // while (have_posts())
         ?>
     </div>
     <footer class="container">
-        <?php if(!$isSinglePost) { ?>
         <div class="row">
             <div class="twocol"></div>
             <div class="eightcol">
@@ -151,7 +140,6 @@
             </div>
             <div class="twocol last"></div>
         </div>
-        <?php } ?>
     </footer>
     <nav>
         <?php
