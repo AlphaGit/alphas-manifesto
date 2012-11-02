@@ -78,12 +78,12 @@ $content_width = 745;
                     </div>
                 </div>
                 <div class="eightcol">
-                    <div class="title">
+                    <hgroup class="title">
                         <h1><a href="<?php echo $titleLink ?>"><?php echo $title ?></a></h1>
                         <?php if(strlen($pageSubtitle) > 0) { ?>
                             <h2><?php echo $pageSubtitle ?></h2>
                         <?php } ?>
-                    </div>
+                    </hgroup>
                 </div>
                 <div class="twocol last searchForm">
                     <?php get_search_form() ?>

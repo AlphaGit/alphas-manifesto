@@ -77,12 +77,12 @@
                     </div>
                 </div>
                 <div class="eightcol">
-                    <div class="title">
+                    <hgroup class="title">
                         <h1><a href="<?php echo $titleLink ?>"><?php echo $title ?></a></h1>
                         <?php if(strlen($pageSubtitle) > 0) { ?>
                             <h2><?php echo $pageSubtitle ?></h2>
                         <?php } ?>
-                    </div>
+                    </hgroup>
                 </div>
                 <div class="twocol last searchForm">
                     <?php get_search_form() ?>
@@ -98,9 +98,11 @@
                     <div class="categories"><?php the_category(', ') ?></div>
                 </div>
                 <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
-                    <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
-                    <p class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></p>
-
+                    <hgroup>
+                        <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
+                        <p class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></p>
+                    </hgroup>
+                    
                     <?php the_content(); ?>
                 </div>
                 <div class="twocol last postLinks">
