@@ -84,7 +84,15 @@
                 </div>
                 <div class="eightcol">
                     <hgroup class="title">
-                        <h1><a href="<?php echo $blogLink ?>"><?php echo $title ?></a></h1>
+                        <h1>
+                            <?php if(!is_singular()) { ?>
+                                <a href="<?php echo $blogLink ?>">
+                            <?php } ?>
+                                <?php echo $title ?>
+                            <?php if(!is_singular()) { ?>
+                                </a>
+                            <?php } ?>
+                        </h1>
                         <?php if(strlen($pageSubtitle) > 0) { ?>
                             <h2><?php echo $pageSubtitle ?></h2>
                         <?php } ?>
