@@ -21,7 +21,7 @@
                                 ? number_format_i18n($commentsNumber)
                               . " comentario"
                               . ($commentsNumber > 1 ? "s" : "")
-                          : "Sin comentarios aún.";     
+                          : "Sin comentarios a&uacute;n.";     
                         ?>
                         <div class="share"></div>
                         <script type="text/javascript">
