@@ -131,6 +131,14 @@ article h2 {
     font-weight: bold;
 }
 
+    article h2.subtitle {
+        font-family: georgia, 'times new roman', serif;
+        margin-bottom: 1em;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: normal;
+    }
+
 article h3 {
     font-weight: bold;
     font-variant: small-caps;
@@ -139,10 +147,6 @@ article h3 {
 
 article hr {
     margin: 2em auto;
-}
-
-article .subtitle {
-    font-style: italic;
 }
 
 article h1 a {
