@@ -1,4 +1,6 @@
 <?php
+    add_theme_support( 'automatic-feed-links' );
+
     function alphasmanifesto_comment($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment;
 ?>
