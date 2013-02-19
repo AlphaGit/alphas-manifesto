@@ -27,14 +27,6 @@
                                 . ($commentsNumber > 1 ? "s" : "")
                             : "Sin comentarios aún.";     
                     ?>
-                    <div class="share"></div>
-                    <script type="text/javascript">
-                        var configuration = {
-                            url: "<?php the_permalink() ?>",
-                            title: "<?php the_title() ?>"
-                        };
-                        addthis.button('.share', configuration);
-                    </script>
                     <div class="commentCount"><a href="<?php the_permalink() ?>#comments"><?php echo $commentNumberText ?></a></div>
                     <div class="tags"><p><?php 
                         echo get_the_tags()

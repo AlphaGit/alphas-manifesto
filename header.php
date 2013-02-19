@@ -35,7 +35,6 @@
         wp_enqueue_script("jquery");
         wp_enqueue_script('mediaqueries', get_template_directory_uri() . '/css3-mediaqueries.js', array());
         wp_enqueue_script('jqdock', get_template_directory_uri() . '/jquery.jqdock.min.js', array('jquery'));
-        wp_enqueue_script('addthis', 'http://s7.addthis.com/js/250/addthis_widget.js#pubid=Alpha', array('jquery'));
     }
 	?>
     <?php add_action('wp_enqueue_scripts', 'enqueue_scripts'); ?>
