@@ -20,7 +20,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><?php echo $title ?></title>
+    <title><?php echo get_the_title() ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!--[if lte IE 9]><link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/ie.css" type="text/css" media="screen" /><![endif]-->
