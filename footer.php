@@ -1,9 +1,11 @@
     <nav>
         <?php
+            $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
             $categories = get_categories(array(
                 'hierarchical' => false
             ));
         ?>
+
         <ul id="dockMenu">
             <?php 
                 foreach ($categories as $cat) {
