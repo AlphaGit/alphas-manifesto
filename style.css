@@ -210,6 +210,10 @@ footer {
 }
 
 /* comment section */
+#reply-title {
+    margin-top: 1em;
+}
+
 #comments h2 {
     font-size: 1.6em;
     font-family: garamond, georgia, 'times new roman', serif;
