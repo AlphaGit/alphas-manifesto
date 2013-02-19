@@ -6,8 +6,8 @@
 </ifmodule>
 <IfModule mod_rewrite.c>
     RewriteEngine On
-	  #RewriteBase /
-	  RewriteBase /wptest/wp-content/themes/alphasmanifesto
+	  RewriteBase /wp-content/themes/alphasmanifesto
+	  #RewriteBase /wptest/wp-content/themes/alphasmanifesto
 	
     RewriteCond %{REQUEST_FILENAME} icon-.*\.png
     RewriteCond %{REQUEST_FILENAME} !-f
