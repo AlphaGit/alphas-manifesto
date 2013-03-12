@@ -6,8 +6,18 @@
             ));
         ?>
 
-        <ul id="dockMenu">
-            <?php 
+        <?php 
+            wp_nav_menu(array(
+                    'theme_location' => 'footer-menu',
+                    'container' => false,
+                    'menu_id' => 'dockMenu',
+                    'depth' => 1,
+                    'walker' => new AlphasManifestoNavMenuWalker
+                )
+            );
+        ?>
+        <?php
+        /*<ul id="dockMenu">
                 foreach ($categories as $cat) {
                     $slug = $cat->slug;
                     ?>
@@ -20,6 +30,8 @@
                 }
             ?>
         </ul>
+        */
+        ?>
     </nav>
     <?php wp_footer(); ?> 
 </body>
