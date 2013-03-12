@@ -35,12 +35,12 @@
             $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
             $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 
-            $slug = preg_replace('[^A-Za-z0-9]', '', $item->title);
+            $title = apply_filters( 'the_title', $item->title, $item->ID );
 
             $item_output = $args->before;
             $item_output .= '<a'. $attributes .'>';
-            $item_output .= "<img src='{$item->image_filename}' alt='{$item->title}' width='128' height='128' />";
-            $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+            $item_output .= "<img src='{$item->image_url}' alt='{$item->title}' width='128' height='128' title='$title' />";
+            $item_output .= $args->link_before . $title . $args->link_after;
             $item_output .= '</a>';
             $item_output .= $args->after;
 
@@ -67,21 +67,20 @@
     // - http://www.wpexplorer.com/adding-custom-attributes-to-wordpress-menus/
     add_filter( 'wp_setup_nav_menu_item', 'alphasmanifesto_setup_nav_menu_item' );
     function alphasmanifesto_setup_nav_menu_item($menu_item) {
-        $attrName = 'image_filename';
+        $attrName = 'image_url';
         $genericProperty = "alphasmanifesto_menu_item_$attrName";
-        $menu_item->image_filename = get_post_meta($menu_item->ID, $genericProperty, true);
+        $menu_item->image_url = get_post_meta($menu_item->ID, $genericProperty, true);
         return $menu_item;
     }
 
     add_action( 'wp_update_nav_menu_item', 'alphasmanifesto_update_nav_menu_item', 10, 3 );
 
     function alphasmanifesto_update_nav_menu_item($menu_id, $menu_item_id, $args) {
-        $attrName = 'image_filename';
+        $attrName = 'image_url';
         $genericProperty = "alphasmanifesto_menu_item_$attrName";
         $itemProperty = $genericProperty . "_$menu_item_id";
-        if ( isset( $_POST[ "menu-item-image-filename" ] ) ) {
-            $value = $_POST[ "menu-item-image-filename" ][$menu_item_id];
-            var_dump($genericProperty);
+        if ( isset( $_POST[ "menu-item-image-url" ] ) ) {
+            $value = $_POST[ "menu-item-image-url" ][$menu_item_id];
             update_post_meta( $menu_item_id, $genericProperty, $value );
         } else {
             delete_post_meta( $menu_item_id, $genericProperty );
@@ -241,10 +240,10 @@
                             <span class="description"><?php _e('The description will be displayed in the menu if the current theme supports it.'); ?></span>
                         </label>
                     </p>
-                    <p class="field-image-filename description description-thin">
-                        <label for="edit-menu-item-image-filename-<?php echo $item_id; ?>">
-                            <?php _e( 'Image Filename' ); ?><br />
-                            <input type="text" id="edit-menu-item-image-filename-<?php echo $item_id ?>" class="widefat code edit-menu-item-image-filename" name="menu-item-image-filename[<?php echo $item_id; ?>]" value="<?php echo esc_attr($item->image_filename); ?>" /?
+                    <p class="field-image-url description description-thin">
+                        <label for="edit-menu-item-image-url-<?php echo $item_id; ?>">
+                            <?php _e( 'Image URL' ); ?><br />
+                            <input type="text" id="edit-menu-item-image-url-<?php echo $item_id ?>" class="widefat code edit-menu-item-image-url" name="menu-item-image-url[<?php echo $item_id; ?>]" value="<?php echo esc_attr($item->image_url); ?>" /?
                         </label>
                     </p>
 
