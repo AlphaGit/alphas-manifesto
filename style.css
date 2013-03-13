@@ -345,8 +345,9 @@ article iframe, article video {
 }
 
 /* Fixes for github gists */
-.gist-file {
-    line-height: 1em;
+.gist .gist-file {
+    line-height: 1.2em;
+    font-size: 13px;
 }
 
 .gist table {
