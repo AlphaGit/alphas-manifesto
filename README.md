@@ -7,6 +7,8 @@ Wordpress theme for Alpha's Manifesto. You can see it live working on [http://bl
 
 The dock menu at the bottom can be configured through the `Themes` -> `Appearance` -> `Menus` option in the Wordpress admin section.
 
+The dock menu does not currently support subitems. Only the first level of items configured will be displayed.
+
 ### Image configuration
 
 After a menu is created and assigned to the available place for the theme, you can add links into it. For these links to be displayed in the dock menu you will need to also complete the `Image URL` field in the menu item edition. This Image URL field should contain the absolute or relative path to the place where your image files are hosted. If you are not sure on the relative path part, you just need to know that whatever you include in this field will be used for the `src` attribute of the images.
