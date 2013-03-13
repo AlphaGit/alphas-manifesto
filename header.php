@@ -34,41 +34,56 @@
     function enqueue_scripts() {
         wp_enqueue_script("jquery");
         wp_enqueue_script('mediaqueries', get_template_directory_uri() . '/css3-mediaqueries.js', array());
-        wp_enqueue_script('jqdock', get_template_directory_uri() . '/jquery.jqdock.min.js', array('jquery'));
+        if (has_nav_menu('footer-menu')) wp_enqueue_script('jqdock', get_template_directory_uri() . '/jquery.jqdock.min.js', array('jquery'));
     }
 	?>
     <?php add_action('wp_enqueue_scripts', 'enqueue_scripts'); ?>
     <?php wp_head(); ?>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
-            $('#dockMenu').jqDock({
-                align: 'bottom',
-                labels: 'bc',
-                fadeIn: 2000,
-                idle: 500,
-                onSleep: function(){ //scope (this) is the #menu element
-                    var menu = $(this);
-                    //slide the entire original menu off the top of the window...
-                    menu.animate({bottom:-1 * menu.height() + 20},800);
-                    //bind a one-off mousemove event to the silhouette child...
-                    menu.one('mousemove', function(){
-                        menu.stop().animate(
-                            {bottom:'1em'},
-                            { 
-                                duration: 400, 
-                                complete: function() {
-                                    menu.trigger('docknudge');
-                                }
-                            }
-                        );
-                        return false;
-                    });
-                }       
-            });
+            <?php 
+                if (has_nav_menu('footer-menu')) {
+                    ?>
+                        $('#dockMenu').jqDock({
+                            align: 'bottom',
+                            labels: 'bc',
+                            fadeIn: 2000,
+                            idle: 500,
+                            onSleep: function(){ //scope (this) is the #menu element
+                                var menu = $(this);
+                                //slide the entire original menu off the top of the window...
+                                menu.animate({bottom:-1 * menu.height() + 20},800);
+                                //bind a one-off mousemove event to the silhouette child...
+                                menu.one('mousemove', function(){
+                                    menu.stop().animate(
+                                        {bottom:'1em'},
+                                        { 
+                                            duration: 400, 
+                                            complete: function() {
+                                                menu.trigger('docknudge');
+                                            }
+                                        }
+                                    );
+                                    return false;
+                                });
+                            }       
+                        });
+                    <?php
+                }
+            ?>
             
             // embed resize fix
-            $('article iframe').removeAttr('width');
-			$('article video').removeAttr('width').removeAttr('height');
+            $('article iframe, article video').each(function() {
+                var $embedded = $(this);
+                var declaredWidth = +$embedded.attr('width');
+                var declaredHeight = +$embedded.attr('height');
+                if (!!declaredWidth && !!declaredHeight) {
+                    $embedded.removeAttr('width');
+                    var actualWidth = $embedded.width();
+                    $embedded.attr('height', actualWidth / declaredWidth * declaredHeight);
+                }
+                $embedded.removeAttr('width');
+            });
         });
     </script>
 </head>
