@@ -181,7 +181,7 @@
                             <span class="description"><?php _e('The description will be displayed in the menu if the current theme supports it.'); ?></span>
                         </label>
                     </p>
-                    <p class="field-image-url description description-thin">
+                    <p class="field-image-url description description-wide">
                         <label for="edit-menu-item-image-url-<?php echo $item_id; ?>">
                             <?php _e( 'Image URL' ); ?><br />
                             <input type="text" id="edit-menu-item-image-url-<?php echo $item_id ?>" class="widefat code edit-menu-item-image-url" name="menu-item-image-url[<?php echo $item_id; ?>]" value="<?php echo esc_attr($item->image_url); ?>" /?
