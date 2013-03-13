@@ -334,12 +334,32 @@ ul.children { /* TODO: Fix hierarchical comments */
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Fixes for general embeds */
 article iframe, article video {
     width: 100%;
 }
 
+/* Fixes for twitter embeds */
 .twitter-tweet-rendered {
     width: 100% !important;
+}
+
+/* Fixes for github gists */
+.gist-file {
+    line-height: 1em;
+}
+
+.gist table {
+    border: none;
+    margin: 0;
+}
+
+.gist .line-pre {
+    overflow-x: initial;
+}
+
+.gist table td {
+    border: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -383,3 +403,4 @@ article iframe, article video {
         margin-bottom: 0;
     }
 }
+
