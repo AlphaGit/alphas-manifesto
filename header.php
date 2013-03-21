@@ -1,11 +1,15 @@
 <?php
-    $title = get_bloginfo('name', 'Display');
-
-    if (is_singular()) 
-    {
-    	$title = get_the_title() . " | ". $title;
-	}
+    $blogname = get_bloginfo('name', 'Display');
     $postTitle = get_the_title();
+
+    $browserTitle = is_singular() 
+        ? $postTitle . " | ". $blogname
+        : $blogname;
+
+    $pageTitle = is_singular()
+        ? $postTitle
+        : $blogname;
+
 	$pageSubtitle = is_singular()
 		? get_post_meta(get_the_ID(), 'subtitle', true)
 		: get_bloginfo('description', 'Display');
@@ -20,7 +24,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><?php echo $title ?></title>
+    <title><?php echo $browserTitle ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!--[if lte IE 9]><link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/ie.css" type="text/css" media="screen" /><![endif]-->
@@ -101,9 +105,10 @@
                         <h1>
                             <?php if(!is_singular()) { ?>
                                 <a href="<?php echo $blogLink ?>">
-                            <?php } ?>
-                                <?php echo $postTitle ?>
-                            <?php if(!is_singular()) { ?>
+                            <?php } 
+                                echo $pageTitle;
+                                if(!is_singular()) { 
+                            ?>
                                 </a>
                             <?php } ?>
                         </h1>
