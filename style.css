@@ -145,6 +145,25 @@ article h3 {
     font-size: 1.25em;
 }
 
+article h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+article h5 {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+article h6 {
+    font-variant: small-caps;
+}
+
+article address {
+    font-style: italic;
+}
+
 article hr {
     margin: 2em auto;
 }
