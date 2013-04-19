@@ -24,6 +24,14 @@
                           : "Sin comentarios a&uacute;n.";     
                         ?>
                         <div class="commentCount"><a href="<?php the_permalink() ?>#comments"><?php echo $commentNumberText ?></a></div>
+                        <?php wp_link_pages(array(
+                            'before' => '<div class="postPages"><p>Páginas:</p><ul>',
+                            'after' => '</ul></div>',
+                            'link_before' => '<li>',
+                            'link_after' => '</li>',
+                            'next_or_number' => 'number',
+                            'pagelink' => 'Página %'
+                        )); ?>
                         <div class="tags"><p><?php 
                       echo get_the_tags()
                       ? the_tags()

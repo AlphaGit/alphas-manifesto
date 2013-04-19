@@ -202,7 +202,7 @@ article .metadata, article .postLinks {
     font-size: 0.9em;
 }
 
-.tags, .commentCount {
+.tags, .commentCount, .postPages {
     border-top: 2px solid #CCC;
     margin-top: 1em;
     padding-top: 1em;
