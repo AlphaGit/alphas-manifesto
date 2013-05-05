@@ -5,9 +5,7 @@
     <?php while(have_posts()) : the_post(); ?>
         <div id="postsContainer" class="container">
                 <article class="row">
-                    <div class="metadata twocol">
-                        <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime"><?php the_time(get_option('date_format')); ?><br/><?php the_time() ?></time>
-                    </div>
+                    <div class="metadata twocol"> </div>
                     <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
                         <?php the_content(); ?>
                     </div>
