@@ -43,6 +43,14 @@
             </div>
             <div class="twocol last postLinks">
                 <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
+                <?php wp_link_pages(array(
+                    'before' => '<div class="postPages"><p>Páginas:</p><ul>',
+                    'after' => '</ul></div>',
+                    'link_before' => '<li>',
+                    'link_after' => '</li>',
+                    'next_or_number' => 'number',
+                    'pagelink' => 'Página %'
+                )); ?>
             </div>
         </article>
     </div>
