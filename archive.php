@@ -15,6 +15,7 @@
                 <?php if($show_author_name) { ?>
                     <div class="author">por <span class="name"><?php the_author() ?></span></div>
                 <?php } ?>
+                <?php edit_post_link('Editar...', '<div class="edit">', '</div>') ?>
             </div>
             <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
                 <?php the_content(); ?>
