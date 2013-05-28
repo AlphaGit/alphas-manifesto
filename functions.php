@@ -49,6 +49,16 @@
                         comment_text();
                     } ?>
                 </div>
+                <div class="reply">
+                    <?php comment_reply_link(array(
+                        'add_below' => 'comment',
+                        'depth' => $depth,
+                        'respond_id' => 'commentForm',
+                        'max_depth' => $args['max_depth'],
+                        'reply_text' => '(Responder)',
+                        'login_text' => '(Debes registrarte antes de dejar un comentario)'
+                    )) ?>
+                </div>
                 <hr class="commentSeparator" />
             </div>
             <div class="twocol last"></div>

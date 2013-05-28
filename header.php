@@ -39,6 +39,9 @@
         wp_enqueue_script("jquery");
         wp_enqueue_script('mediaqueries', get_template_directory_uri() . '/css3-mediaqueries.js', array());
         if (has_nav_menu('footer-menu')) wp_enqueue_script('jqdock', get_template_directory_uri() . '/jquery.jqdock.min.js', array('jquery'));
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
     }
 	?>
     <?php add_action('wp_enqueue_scripts', 'enqueue_scripts'); ?>

@@ -51,7 +51,7 @@
                 'id_submit' => 'commentSubmit',
                 'title_reply' => 'Agrega tu comentario',
                 'title_reply_to' => 'Responde a %s',
-                'cancel_reply_link' => __( 'Cancel reply' ),
+                'cancel_reply_link' => __( '(Cancelar respuesta)' ),
                 'label_submit' => 'Post',
             );
         ?>
