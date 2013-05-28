@@ -315,6 +315,27 @@ ul.children { /* TODO: Fix hierarchical comments */
     padding: 0;
 }
 
+.comment.depth-1 .commentContentContainer {
+    padding-left: 0;
+}
+.comment.depth-2 .commentContentContainer {
+    padding-left: 50px;
+}
+.comment.depth-3 .commentContentContainer {
+    padding-left: 100px;
+}
+.comment.depth-4 .commentContentContainer {
+    padding-left: 150px;
+}
+.comment.depth-5 .commentContentContainer,
+.comment.depth-6 .commentContentContainer,
+.comment.depth-7 .commentContentContainer,
+.comment.depth-8 .commentContentContainer,
+.comment.depth-9 .commentContentContainer,
+.comment.depth-10 .commentContentContainer { /* If you need more levels, you probably should not be using the comments section anyway. */
+    padding-left: 200px;
+}
+
 .searchForm {
     padding-top: 20px;
 }
