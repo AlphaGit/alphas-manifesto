@@ -19,7 +19,7 @@
     function alphasmanifesto_comment($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment;
 ?>
-        <article class="comment row" id="comment-<?php echo comment_ID(); ?>">
+        <article <?php comment_class("comment row"); ?> id="comment-<?php echo comment_ID(); ?>">
 <?php
         switch ($comment->comment_type) {
             case 'pingback':

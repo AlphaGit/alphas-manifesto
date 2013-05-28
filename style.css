@@ -244,6 +244,10 @@ footer {
     margin-top: 1em;
 }
 
+    .comment.byuser {
+        background-color: #EEE;
+    }
+
 .commentAvatar {
     /*text-align: center;*/
 }
