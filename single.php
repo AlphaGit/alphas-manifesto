@@ -1,6 +1,7 @@
 <?php 
     get_header(); 
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
+    $show_author_name = get_option( 'show_author_name' );
 ?>
     <?php while(have_posts()) : the_post(); ?>
         <div id="postsContainer" class="container">
@@ -8,6 +9,9 @@
                     <div class="metadata twocol">
                         <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime"><?php the_time(get_option('date_format')); ?><br/><?php the_time() ?></time>
                         <div class="categories"><?php the_category(', ') ?></div>
+                        <?php if($show_author_name) { ?>
+                            <div class="author">por <span class="name"><?php the_author() ?></span></div>
+                        <?php } ?>
                     </div>
                     <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
                         <?php the_content(); ?>

@@ -9,6 +9,12 @@
     require_once 'custom_menu_setup.php';
 
     /********************************************************************/
+    // Custom theme options
+
+    require_once 'theme_options.php';
+
+    add_action('admin_init', 'alphasmanifesto_admin_init');
+    add_action('admin_menu', 'alphasmanifesto_admin_menu');
 
     function alphasmanifesto_comment($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment;
