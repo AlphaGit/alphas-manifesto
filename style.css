@@ -53,70 +53,11 @@ strong {
     font-weight: bold;
 }
 
-/* header styles */
-
-header {
-    background: #444;
-    -moz-box-shadow: 10px -5px 5px 10px #888;
-    -webkit-box-shadow: 10px -5px 5px 10px #888;
-    box-shadow: 10px -5px 5px 10px #888;
-}
-
-header h1 {
-    color: white;
-    font-size: 3em;
-    line-height: 1em;
-}
-
-header h1 a {
-    color: white;
-    text-decoration: none;
-}
-
-header h2 {
-    font-size: 1.2em;
-    color: #BBB;
-    font-weight: normal;
-    font-style: italic;
-}
-
-#titleContainer>.row {
-    margin: 0 auto;
-}
-
-.title {
-    margin: 1em auto;
-    padding: 0.5em 0;
-}
-
-/* post styles */
-
-.post {
-    margin-top: 1em;
-}
-
-.post table td {
-	border: 1px solid black;
-	padding: 1em;
-}
-.post table {
-	border: 1px solid black;
-	margin: 1em 0;
-}
-
-.post table thead {
-	font-weight: bold;
-}
-
-article {
+.row {
     border-bottom: 2px solid #CCC;
     margin-bottom: 1em;
     padding-bottom: 1em;
     margin-top: 1em;    
-}
-
-article.row {
-    padding-top: 1em;
 }
 
 article h1 {
@@ -174,9 +115,9 @@ article h1 a {
 }
 
 article pre {
-	font-family: Consolas, "Courier New", Courier, monospace;
-	overflow-x: scroll;
-	margin-bottom: 1em;
+    font-family: Consolas, "Courier New", Courier, monospace;
+    overflow-x: scroll;
+    margin-bottom: 1em;
 }
 
 p, ul, ol, #post div { 
@@ -184,15 +125,74 @@ p, ul, ol, #post div {
 }
 
 .alignright {
-	float: right;
+    float: right;
 }
 
 .alignleft {
-	float: left;
+    float: left;
 }
 
 .aligncenter {
-	text-align: center;
+    text-align: center;
+}
+
+/* header styles */
+
+header {
+    background: #444;
+    -moz-box-shadow: 10px -5px 5px 10px #888;
+    -webkit-box-shadow: 10px -5px 5px 10px #888;
+    box-shadow: 10px -5px 5px 10px #888;
+}
+
+    header .row {
+        border-bottom: none;
+    }
+
+    header h1 {
+        color: white;
+        font-size: 3em;
+        line-height: 1em;
+    }
+
+        header h1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+    header h2 {
+        font-size: 1.2em;
+        color: #BBB;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+#titleContainer>.row {
+    margin: 0 auto;
+}
+
+.title {
+    margin: 1em auto;
+    padding: 0.5em 0;
+}
+
+/* post styles */
+
+.post {
+    margin-top: 1em;
+}
+
+.post table td {
+	border: 1px solid black;
+	padding: 1em;
+}
+.post table {
+	border: 1px solid black;
+	margin: 1em 0;
+}
+
+.post table thead {
+	font-weight: bold;
 }
 
 /* post metadata */
@@ -233,20 +233,32 @@ footer {
     margin-top: 1em;
 }
 
-#comments h2 {
+.comments.title.row {
+    border-bottom: none;
+}
+
+.comments h2 {
     font-size: 1.6em;
     font-family: garamond, georgia, 'times new roman', serif;
     font-weight: bold;
     margin-top: 1em;
 }
 
-.comment {
-    margin-top: 1em;
+article.comment {
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-    .comment.bypostauthor {
+    article.comment.row {
+        padding-top: 1em;
+        paarticledding-bottom: 0;
+    }
+
+    article.comment.bypostauthor {
         background-color: #EEE;
     }
+
 
 .commentAvatar {
     /*text-align: center;*/
@@ -270,15 +282,31 @@ footer {
     font-weight: bold;
 }
 
-#commentForm h3 {
-    font-weight: bold;
-    font-variant: small-caps;
-    font-size: 1.3em;
-    margin-bottom: 1em;
+#commentForm {
+    padding-top: 0;
+    margin-top: 0;
 }
 
-.commentSeparator {
+    #commentForm h3 {
+        font-weight: bold;
+        font-variant: small-caps;
+        font-size: 1.3em;
+        margin-bottom: 1em;
+    }
+
+    #commentForm label {
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    #commentform input[type=text] {
+        width: 100%;
+        font: normal 1em/1.5 Georgia, serif;
+    }
+
+hr.commentSeparator {
     clear: both;
+    margin-bottom: 0;
 }
 
 #comment {
@@ -301,16 +329,6 @@ p.commentFormComment {
     font-size: 1.5em;
 }
 
-#commentForm label {
-    font-weight: bold;
-    font-size: 1em;
-}
-
-#commentform input[type=text] {
-    width: 100%;
-    font: normal 1em/1.5 Georgia, serif;
-}
-
 #cancel-comment-reply-link {
     font-size: 0.8em;
     font-variant: normal;
@@ -320,6 +338,7 @@ p.commentFormComment {
 
 ul.children { /* TODO: Fix hierarchical comments */
     padding: 0;
+    margin: 0;
 }
 
 .comment.depth-1 .commentContentContainer {
@@ -343,15 +362,6 @@ ul.children { /* TODO: Fix hierarchical comments */
     padding-left: 200px;
 }
 
-.searchForm {
-    padding-top: 20px;
-}
-
-.searchForm label {
-    color: #DDD;
-    display: none;
-}
-
 .wp-caption {
 	border: 1px solid 
 	rgb(170, 170, 170);
@@ -366,6 +376,39 @@ ul.children { /* TODO: Fix hierarchical comments */
 	font-size: 0.7em;
 }
 
+
+/* Search form and search results */
+.searchForm {
+    padding-top: 20px;
+}
+
+.searchForm label {
+    color: #DDD;
+    display: none;
+}
+
+.searchResults.row {
+    margin-top: 1em;
+    margin-bottom: 0;
+    background-color: #F9FBFC;
+    border-top: 2px solid #DDD;
+    border-right: 2px solid #CCC;
+    border-left: 2px solid #CCC;
+    border-bottom: 2px solid #BBB;
+    border-radius: 10px;
+    padding-top: 1em;
+}
+
+    .searchResults p {
+        margin-bottom: 0;
+    }
+
+    .searchResults+.row {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+/* Dock navigation menu */
 #dockMenu {
     position:fixed; 
     bottom:1em; 
@@ -373,17 +416,23 @@ ul.children { /* TODO: Fix hierarchical comments */
     display:none;
 }
 
-#dockMenu div.jqDockWrap {margin:0 auto 0 auto; padding-bottom: 1em;}
-#dockMenu div.jqDock {cursor:pointer; background-color: rgba(255, 255, 255, 0.5); }
-#dockMenu div.jqDockLabel {
-    font-weight:bold; 
-    color: black; 
-    white-space:nowrap; 
-    font-variant: small-caps;
-    cursor:pointer; 
-    bottom: -1em !IMPORTANT; /* style forced by jquery.jqdock  */
-    background-color: rgba(255, 255, 255, 0.5);
-}
+    #dockMenu div.jqDockWrap {
+        margin:0 auto 0 auto;
+        padding-bottom: 1em;
+    }
+    #dockMenu div.jqDock {
+        cursor:pointer; 
+        background-color: rgba(255, 255, 255, 0.5); 
+    }
+    #dockMenu div.jqDockLabel {
+        font-weight:bold; 
+        color: black; 
+        white-space:nowrap; 
+        font-variant: small-caps;
+        cursor:pointer; 
+        bottom: -1em !IMPORTANT; /* style forced by jquery.jqdock  */
+        background-color: rgba(255, 255, 255, 0.5);
+    }
 
 /* Fixes for general embeds */
 article iframe, article video {

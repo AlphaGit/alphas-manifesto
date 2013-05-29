@@ -1,4 +1,4 @@
-<div id="comments" class="row">
+<div class="comments title row">
     <div class="twocol"></div>
     <div class="eightcol">
         <h2>Comentarios</h2>
