@@ -7,31 +7,37 @@
 
 	// retrieve menu item custom url attribute
     add_filter( 'wp_setup_nav_menu_item', 'alphasmanifesto_setup_nav_menu_item' );
-    function alphasmanifesto_setup_nav_menu_item($menu_item) {
-        $attrName = 'image_url';
-        $genericProperty = "alphasmanifesto_menu_item_$attrName";
-        $menu_item->image_url = get_post_meta($menu_item->ID, $genericProperty, true);
-        return $menu_item;
+    if (!function_exists("alphasmanifesto_setup_nav_menu_item")) {
+        function alphasmanifesto_setup_nav_menu_item($menu_item) {
+            $attrName = 'image_url';
+            $genericProperty = "alphasmanifesto_menu_item_$attrName";
+            $menu_item->image_url = get_post_meta($menu_item->ID, $genericProperty, true);
+            return $menu_item;
+        }
     }
 
 	// save menu item custom url attribute
     add_action( 'wp_update_nav_menu_item', 'alphasmanifesto_update_nav_menu_item', 10, 3 );
-    function alphasmanifesto_update_nav_menu_item($menu_id, $menu_item_id, $args) {
-        $attrName = 'image_url';
-        $genericProperty = "alphasmanifesto_menu_item_$attrName";
-        $itemProperty = $genericProperty . "_$menu_item_id";
-        if ( isset( $_POST[ "menu-item-image-url" ] ) ) {
-            $value = $_POST[ "menu-item-image-url" ][$menu_item_id];
-            update_post_meta( $menu_item_id, $genericProperty, $value );
-        } else {
-            delete_post_meta( $menu_item_id, $genericProperty );
+    if (!function_exists("alphasmanifesto_update_nav_menu_item")) {
+        function alphasmanifesto_update_nav_menu_item($menu_id, $menu_item_id, $args) {
+            $attrName = 'image_url';
+            $genericProperty = "alphasmanifesto_menu_item_$attrName";
+            $itemProperty = $genericProperty . "_$menu_item_id";
+            if ( isset( $_POST[ "menu-item-image-url" ] ) ) {
+                $value = $_POST[ "menu-item-image-url" ][$menu_item_id];
+                update_post_meta( $menu_item_id, $genericProperty, $value );
+            } else {
+                delete_post_meta( $menu_item_id, $genericProperty );
+            }
         }
     }
 
     // modify the displayed dom for editing menu items so that they provide the new value
     add_action( 'wp_edit_nav_menu_walker', 'alphasmanifesto_edit_nav_menu_walker' );
-    function alphasmanifesto_edit_nav_menu_walker($walker) {
-        return "AlphasManifestoNavMenuEditWalker";
+    if (!function_exists("alphasmanifesto_edit_nav_menu_walker")) {
+        function alphasmanifesto_edit_nav_menu_walker($walker) {
+            return "AlphasManifestoNavMenuEditWalker";
+        }
     }
 
     class AlphasManifestoNavMenuEditWalker extends Walker_Nav_Menu  {
