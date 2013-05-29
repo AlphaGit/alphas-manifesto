@@ -228,6 +228,10 @@ footer {
 	margin-bottom: 45px;
 }
 
+    footer p {
+        margin-bottom: 0;
+    }
+
 /* comment section */
 #reply-title {
     margin-top: 1em;
