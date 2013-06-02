@@ -169,6 +169,7 @@ header {
 
 #titleContainer>.row {
     margin: 0 auto;
+    padding-bottom: 0;
 }
 
 .title {
