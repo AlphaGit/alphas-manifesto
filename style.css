@@ -179,21 +179,27 @@ header {
 
 /* post styles */
 
-.post {
+.postContent {
     margin-top: 1em;
 }
 
-.post table td {
+.postContent table td {
 	border: 1px solid black;
 	padding: 1em;
 }
-.post table {
+.postContent table {
 	border: 1px solid black;
 	margin: 1em 0;
 }
 
-.post table thead {
+.postContent table thead {
 	font-weight: bold;
+}
+
+.sticky {
+    background-color: #F9FBFC;
+    border-right: 1em solid #F9FBFC;
+    border-left: 1em solid #F9FBFC;
 }
 
 /* post metadata */

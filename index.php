@@ -5,7 +5,7 @@
 ?>
     <div id="postsContainer" class="container">
         <?php while(have_posts()) : the_post(); ?>
-            <article class="row">
+            <article id="post-<?php echo the_ID() ?>" <?php post_class('post row') ?>>
                 <div class="metadata twocol">
                     <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime"><?php the_time(get_option('date_format')); ?><br/><?php the_time() ?></time>
                     <div class="categories"><?php the_category(', ') ?></div>
@@ -14,7 +14,7 @@
                     <?php } ?>
                     <?php edit_post_link('Editar...', '<div class="edit">', '</div>') ?>
                 </div>
-                <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
+                <div class="eightcol postContent">
                     <hgroup>
                         <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
                         <h2 class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></h2>

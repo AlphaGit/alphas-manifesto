@@ -4,9 +4,9 @@
 ?>
     <?php while(have_posts()) : the_post(); ?>
         <div id="postsContainer" class="container">
-                <article class="row">
+                <article id="post-<?php echo the_ID() ?>" <?php post_class('post row') ?>>
                     <div class="metadata twocol"> </div>
-                    <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
+                    <div class="eightcol postContent">
                         <?php the_content(); ?>
                     </div>
                     <div class="twocol last postLinks">
