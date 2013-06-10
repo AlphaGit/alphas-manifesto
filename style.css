@@ -181,6 +181,7 @@ header {
 
 .postContent {
     margin-top: 1em;
+    word-wrap: break-word;
 }
 
 .postContent table td {
