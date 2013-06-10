@@ -446,7 +446,7 @@ ul.children { /* TODO: Fix hierarchical comments */
     }
 
 /* Fixes for general embeds */
-article iframe, article video {
+article iframe, article video, article embed {
     width: 100%;
 }
 

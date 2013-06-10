@@ -82,7 +82,7 @@
             ?>
             
             // embed resize fix
-            $('article iframe, article video').each(function() {
+            $('article iframe, article video, article embed').each(function() {
                 var $embedded = $(this);
                 var declaredWidth = +$embedded.attr('width');
                 var declaredHeight = +$embedded.attr('height');
