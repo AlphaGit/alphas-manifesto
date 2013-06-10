@@ -33,9 +33,14 @@
 
             $title = apply_filters( 'the_title', $item->title, $item->ID );
 
+            $image_url = $item->image_url;
+            if (strlen($image_url) == 0) {
+                $image_url = get_bloginfo( 'stylesheet_directory' ) . "/icon-folder.png";
+            }
+
             $item_output = $args->before;
             $item_output .= '<a'. $attributes .'>';
-            $item_output .= "<img src='{$item->image_url}' alt='{$item->title}' width='128' height='128' title='$title' />";
+            $item_output .= "<img src='$image_url' alt='{$item->title}' width='128' height='128' title='$title' />";
             $item_output .= $args->link_before . $title . $args->link_after;
             $item_output .= '</a>';
             $item_output .= $args->after;
