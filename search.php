@@ -22,10 +22,27 @@
                     <?php edit_post_link('Editar...', '<div class="edit">', '</div>') ?>
                 </div>
                 <div class="eightcol postContent">
-                    <hgroup>
-                        <h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
-                        <h2 class="subtitle"><?php echo get_post_meta(get_the_ID(), 'subtitle', true) ?></h2>
-                    </hgroup>
+                    <?php 
+                        $the_title = get_the_title();
+                        $the_subtitle = get_post_meta(get_the_ID(), 'subtitle', true);
+
+                        if (strlen($the_title) || strlen($the_subtitle)) {
+                            ?>
+                                <hgroup>
+                                    <?php if(strlen($the_title) > 0) {
+                                        ?>
+                                            <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
+                                        <?php
+                                    } ?>
+                                    <?php if(strlen($the_subtitle) > 0) {
+                                        ?>
+                                            <h2 class="subtitle"><?php echo $the_subtitle ?></h2>
+                                        <?php
+                                    } ?>
+                                </hgroup>
+                            <?php
+                        }
+                    ?>
                     
                     <?php the_content(); ?>
                 </div>

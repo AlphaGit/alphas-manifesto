@@ -74,10 +74,13 @@ article h2 {
 
     article h2.subtitle {
         font-family: georgia, 'times new roman', serif;
-        margin-bottom: 1em;
         font-size: 1em;
         font-style: italic;
         font-weight: normal;
+    }
+
+    article hgroup {
+        margin-bottom: 1em;
     }
 
 article h3 {
