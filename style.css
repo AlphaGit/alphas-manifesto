@@ -121,6 +121,7 @@ article pre {
     font-family: Consolas, "Courier New", Courier, monospace;
     overflow-x: scroll;
     margin-bottom: 1em;
+    word-wrap: normal;
 }
 
 p, ul, ol, #post div { 
