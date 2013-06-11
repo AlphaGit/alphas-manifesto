@@ -128,6 +128,10 @@ p, ul, ol, #post div {
     margin-bottom: 1em;
 }
 
+    .trackback p {
+        margin-bottom: 0;
+    }
+
 .alignright {
     float: right;
 }
