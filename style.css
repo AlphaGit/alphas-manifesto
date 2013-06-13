@@ -35,6 +35,10 @@ a {
     text-decoration: none;
 }
 
+cite, q, em, var {
+    font-style: italic;
+}
+
 blockquote {
     padding: 1em 1em 1em 2em;
     background-color: #EEE;
@@ -45,13 +49,93 @@ blockquote {
     margin-bottom: 1em;
 }
 
-em {
-    font-style: italic;
-}
+    blockquote cite, blockquote em {
+        font-style: normal;
+    }
 
 strong {
     font-weight: bold;
 }
+
+table {
+    border: 1px solid black;
+    margin: 1em 0;
+    width: 100%;
+}
+
+tr.even {
+    background-color: #EEE;
+}
+
+thead {
+    font-weight: bold;
+}
+
+th {
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+td {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+dt {
+    margin-top: 0.5em;
+    font-style: italic;
+}
+
+dd {
+    margin-top: 0.5em;
+    padding-left: 1em;
+}
+
+abbr, acronym {
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+}
+
+big {
+    font-size: 1.2em;
+}
+
+code, kbd, tt {
+    font-family: Consolas, "Courier New", Courier, monospace;
+}
+
+pre {
+    font-family: Consolas, "Courier New", Courier, monospace;
+    overflow-x: auto;
+    margin-bottom: 1em;
+    word-wrap: normal;
+}
+
+sub {
+    font-size: 0.75em;
+    bottom: -0.25em;
+    position: relative;
+}
+
+sup {
+    font-size: 0.75em;
+    bottom: 0.5em;
+    position: relative;
+}
+
+p, #post div { 
+    margin-bottom: 1em;
+}
+
+    .trackback p {
+        margin-bottom: 0;
+    }
+
+    p.wp-caption-text {
+        margin-bottom: 0;
+        font-size: 0.8em;
+    }
 
 .row {
     border-bottom: 2px solid #CCC;
@@ -63,13 +147,23 @@ strong {
 article h1 {
     font-family: garamond, georgia, 'times new roman', serif;
     font-size: 2em;
-    margin-top: 0em;
+    margin-top: 1em;
 }
+
+    article h1:first-child {
+        margin-top: 0;
+    }
+
+    article h1 + h2 {
+        margin-top: 0.5em;
+    }
 
 article h2 {
     font-size: 1.6em;
     font-family: garamond, georgia, 'times new roman', serif;
     font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
 }
 
     article h2.subtitle {
@@ -115,33 +209,6 @@ article hr {
 article h1 a {
     text-decoration: none;
     color: black;
-}
-
-article pre {
-    font-family: Consolas, "Courier New", Courier, monospace;
-    overflow-x: scroll;
-    margin-bottom: 1em;
-    word-wrap: normal;
-}
-
-p, ul, ol, #post div { 
-    margin-bottom: 1em;
-}
-
-    .trackback p {
-        margin-bottom: 0;
-    }
-
-.alignright {
-    float: right;
-}
-
-.alignleft {
-    float: left;
-}
-
-.aligncenter {
-    text-align: center;
 }
 
 /* header styles */
@@ -190,19 +257,6 @@ header {
 .postContent {
     margin-top: 1em;
     word-wrap: break-word;
-}
-
-.postContent table td {
-	border: 1px solid black;
-	padding: 1em;
-}
-.postContent table {
-	border: 1px solid black;
-	margin: 1em 0;
-}
-
-.postContent table thead {
-	font-weight: bold;
 }
 
 .sticky {
@@ -261,7 +315,6 @@ footer {
     font-size: 1.6em;
     font-family: garamond, georgia, 'times new roman', serif;
     font-weight: bold;
-    margin-top: 1em;
 }
 
 article.comment {
@@ -382,15 +435,41 @@ ul.children { /* TODO: Fix hierarchical comments */
     padding-left: 200px;
 }
 
-.wp-caption {
-	border: 1px solid 
-	rgb(170, 170, 170);
-	margin: 0 10px 10px 0;
-	background-color: 
-	rgb(238, 238, 238);
-	padding: 5px 0;
-	text-align: center;
+.alignright {
+    float: right;
+    margin-left: 10px;
 }
+
+.alignleft {
+    float: left;
+    margin-right: 10px;
+}
+
+.aligncenter {
+    text-align: center;
+}
+
+.wp-caption {
+	border: 1px solid rgb(170, 170, 170);
+	margin: 0 0 1em 0;
+	background-color: rgb(238, 238, 238);
+	padding: 5px;
+	text-align: center;
+    max-width: 100%;
+}
+
+    .wp-caption.aligncenter {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .wp-caption.alignleft {
+        margin-right: 10px;
+    }
+
+    .wp-caption.alignright {
+        margin-left: 10px;
+    }
 
 .wp-caption-dd {
 	font-size: 0.7em;
