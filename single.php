@@ -44,8 +44,10 @@
                     </div>
                 </article>
                 <?php 
-                  comments_template(); 
-            ?>
+                    if (!post_password_required()) {
+                        comments_template(); 
+                    }
+                ?>
         </div>
         <footer class="container">
             <div class="row">
