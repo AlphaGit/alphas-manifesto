@@ -35,7 +35,7 @@ a {
     text-decoration: none;
 }
 
-cite, q, em, var {
+cite, q, em, var, i {
     font-style: italic;
 }
 
@@ -49,7 +49,7 @@ blockquote {
     margin-bottom: 1em;
 }
 
-    blockquote cite, blockquote em {
+    blockquote cite, blockquote q, blockquote em, blockquote var, blockquote i {
         font-style: normal;
     }
 
