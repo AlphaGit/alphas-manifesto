@@ -25,6 +25,10 @@ ul {
     padding-left: 1.5em;
 }
 
+    ul ul, ul ol, ol ul, ol ol {
+        margin-bottom: 0;
+    }
+
 ol {
     list-style-type: decimal;
     padding-left: 1.5em;
@@ -124,7 +128,7 @@ sup {
     position: relative;
 }
 
-p, address, #post div { 
+p, address, ul, ol, #post div { 
     margin-bottom: 1em;
 }
 
