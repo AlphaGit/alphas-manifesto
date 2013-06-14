@@ -309,6 +309,7 @@ footer {
 
 .comments.title.row {
     border-bottom: none;
+    margin-bottom: 0;
 }
 
 .comments h2 {
@@ -325,7 +326,7 @@ article.comment {
 
     article.comment.row {
         padding-top: 1em;
-        paarticledding-bottom: 0;
+        padding-bottom: 0;
     }
 
     article.comment.bypostauthor {
