@@ -158,20 +158,23 @@ article h1 {
         margin-top: 0.5em;
     }
 
-article h2 {
+h2 {
     font-size: 1.6em;
     font-family: garamond, georgia, 'times new roman', serif;
     font-weight: bold;
-    margin-top: 1em;
-    margin-bottom: 0.2em;
 }
 
-    article h2.subtitle {
-        font-family: georgia, 'times new roman', serif;
-        font-size: 1em;
-        font-style: italic;
-        font-weight: normal;
+    article h2 {
+        margin-top: 1em;
+        margin-bottom: 0.2em;
     }
+
+        article h2.subtitle {
+            font-family: georgia, 'times new roman', serif;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: normal;
+        }
 
     article hgroup {
         margin-bottom: 1em;
@@ -312,10 +315,8 @@ footer {
     margin-bottom: 0;
 }
 
-.comments h2 {
-    font-size: 1.6em;
-    font-family: garamond, georgia, 'times new roman', serif;
-    font-weight: bold;
+.commentPagination {
+    text-align: center;
 }
 
 article.comment {
@@ -333,6 +334,11 @@ article.comment {
         background-color: #EEE;
     }
 
+.comment time, .comment .commentDate {
+    font-size: 0.7em;
+    line-height: 1em;
+    display: block;
+}
 
 .commentAvatar {
     /*text-align: center;*/

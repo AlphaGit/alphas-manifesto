@@ -8,6 +8,15 @@
 
 <?php if(have_comments()) {
     wp_list_comments( array( 'callback' => 'alphasmanifesto_comment' ) );
+    ?>
+    <div class="row">
+        <div class="twocol"></div>
+        <div class="commentPagination eightcol">
+             <?php paginate_comments_links(); ?> 
+        </div>
+        <div class="twocol last"></div>
+    </div>
+    <?php
 } else { // no comments -- if have_comments() ?>
     <div class="noComments row">
         <div class="twocol"></div>
@@ -16,7 +25,7 @@
         </div>
         <div class="twocol last"></div>
     </div>
-<?php } // if have_comments() ?>
+<?php } // else if have_comments() ?>
 
 <?php if (comments_open()) { ?>
     <div id="commentForm" class="row">
