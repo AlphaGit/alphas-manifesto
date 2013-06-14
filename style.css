@@ -124,7 +124,7 @@ sup {
     position: relative;
 }
 
-p, #post div { 
+p, address, #post div { 
     margin-bottom: 1em;
 }
 
