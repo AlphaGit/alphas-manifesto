@@ -50,8 +50,9 @@
                             comment_text();
                         } ?>
                     </div>
-                    <div class="reply">
+                    <div class="commentActions">
                         <?php comment_reply_link(array(
+                            'after' => ' | ',
                             'add_below' => 'comment',
                             'depth' => $depth,
                             'respond_id' => 'commentForm',
@@ -59,6 +60,8 @@
                             'reply_text' => '(Responder)',
                             'login_text' => '(Debes registrarte antes de dejar un comentario)'
                         )) ?>
+
+                        <a href="<?php echo get_comment_link(); ?>">(Permalink)</a>
                     </div>
                     <hr class="commentSeparator" />
                 </div>
