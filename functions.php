@@ -61,6 +61,8 @@
                             'login_text' => '(Debes registrarte antes de dejar un comentario)'
                         )) ?>
 
+                        <?php edit_comment_link(__('(Editar)'), null, ' | '); ?>
+
                         <a href="<?php echo get_comment_link(); ?>">(Permalink)</a>
                     </div>
                     <hr class="commentSeparator" />

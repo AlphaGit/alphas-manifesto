@@ -330,7 +330,7 @@ article.comment {
         padding-bottom: 0;
     }
 
-    article.comment.bypostauthor {
+    .comment.bypostauthor {
         background-color: #EEE;
     }
 
