@@ -41,8 +41,8 @@
     }
 
     class AlphasManifestoNavMenuEditWalker extends Walker_Nav_Menu  {
-        function start_lvl(&$output) {}
-        function end_lvl(&$output) {}
+        function start_lvl(&$output, $depth = 0, $args = array()) {}
+        function end_lvl(&$output, $depth = 0, $args = array()) {}
 
         /**
          * @see Walker::start_el()
@@ -53,7 +53,7 @@
          * @param int $depth Depth of menu item. Used for padding.
          * @param object $args
          */
-        function start_el(&$output, $item, $depth, $args) {
+        function start_el(&$output, $item, $depth = 0, $args = array(), $current_object_id = 0) {
             global $_wp_nav_menu_max_depth;
             $_wp_nav_menu_max_depth = $depth > $_wp_nav_menu_max_depth ? $depth : $_wp_nav_menu_max_depth;
 
