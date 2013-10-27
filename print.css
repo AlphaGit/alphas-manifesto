@@ -16,7 +16,8 @@ nav,
 #dockMenu div.jqDockLabel,
 .permalink,
 .share,
-.commentCount {
+.commentCount,
+.post-edit-link {
 	display: none; 
 }
 
@@ -48,7 +49,6 @@ p, blockquote {
 .date, .time { display:  inline; }
 
 .metadata {
-	font-weight: 0.8em;
 	border-bottom: 1px solid black;
 }
 

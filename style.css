@@ -366,12 +366,17 @@ article.comment {
     width: 100px;
 }
 
-.commentAuthor p {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 1.4em;
-    font-size: 0.9em;
-}
+    .commentAuthor p {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.4em;
+        font-size: 0.9em;
+    }
+
+    /* nothing next to the author in a comment box should push up for margins */
+    .commentAuthor + * { 
+        margin-top: 0;
+    }
 
 .commentAuthorName {
     font-weight: bold;
