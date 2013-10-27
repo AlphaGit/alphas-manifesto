@@ -241,6 +241,7 @@ header {
         color: white;
         font-size: 3em;
         line-height: 1em;
+        word-wrap: break-word;
     }
 
         header h1 a {
@@ -252,6 +253,7 @@ header {
         color: #BBB;
         font-weight: normal;
         font-style: italic;
+        word-wrap: break-word;
     }
 
 #titleContainer>.row {
