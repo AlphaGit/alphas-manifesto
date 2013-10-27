@@ -18,7 +18,7 @@
                 <?php edit_post_link('Editar...', '<div class="edit">', '</div>') ?>
             </div>
             <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
-                <?php the_content(); ?>
+                <?php the_content('(Leer más &rarr;)'); ?>
 
                 <h2>Archivos por fecha:</h2>
                 <ul>

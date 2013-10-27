@@ -15,7 +15,7 @@
                         <?php edit_post_link('Editar...', '<div class="edit">', '</div>') ?>
                     </div>
                     <div class="eightcol postContent">
-                        <?php the_content(); ?>
+                        <?php the_content('(Leer más &rarr;)'); ?>
                     </div>
                     <div class="twocol last postLinks">
                         <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
