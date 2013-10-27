@@ -17,7 +17,9 @@
         <div class="twocol last"></div>
     </div>
     <?php
-} else { // no comments -- if have_comments() ?>
+} else if (comments_open()) { // no comments -- if !have_comments() and comments_open() 
+    // we check it like this because we don't want to display two messages if there are
+    // no comments AND comments are closed -- see below for that ?>
     <div class="noComments row">
         <div class="twocol"></div>
         <div class="comment eightcol">
@@ -25,7 +27,7 @@
         </div>
         <div class="twocol last"></div>
     </div>
-<?php } // else if have_comments() ?>
+<?php } //  if !have_comments() and comments_open() ?>
 
 <?php if (comments_open()) { ?>
     <div id="commentForm" class="row">
@@ -69,4 +71,12 @@
         </div>
         <div class="twocol last"></div>
     </div>
-<?php } // if (comments_open()) ?>
+<?php } else { // if (comments_open()) ?>
+    <div class="commentsDisabled row">
+        <div class="twocol"></div>
+        <div class="comment eightcol">
+            <p>(Los comentarios se encuentran deshabilitados para este post.)</p>
+        </div>
+        <div class="twocol last"></div>
+    </div>
+<?php } ?>
