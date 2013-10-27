@@ -1,6 +1,7 @@
 <?php
-    add_theme_support( 'automatic-feed-links' );
+    $content_width = 745;
 
+    add_theme_support( 'automatic-feed-links' );
 
     /********************************************************************/
     // Custom menu support

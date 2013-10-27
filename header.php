@@ -17,8 +17,6 @@
 	$blogLink = home_url();
 
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
-
-    $content_width = 745;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
