@@ -494,13 +494,17 @@ ul.children { /* TODO: Fix hierarchical comments */
 
 
 /* Search form and search results */
-.searchForm {
-    padding-top: 20px;
+header .searchForm {
+    margin-top: 1.5em;
 }
 
-.searchForm label {
-    color: #DDD;
-    display: none;
+    header .searchForm .searchSubmit,
+    header .searchForm label {
+        display: none;
+    }
+
+article .searchForm label {
+    font-weight: bold;
 }
 
 .searchResults.row {
@@ -592,7 +596,8 @@ article iframe, article video, article embed {
         padding-bottom: 1em;
     }
     
-    .searchForm label, .categories, .share  {
+    header .searchForm label {
+        color: #DDD;
         display: inline;
     }
     
@@ -601,13 +606,14 @@ article iframe, article video, article embed {
         border-top: none;
     }
     
-    .permalink, .datetime {
+    .permalink,
+    .datetime {
         display: inline;
-        /*margin-right: 10px;*/
     }
-    .permalink:after, .date:after, .time:after, .share:after {
-        content: " ―";
-    }
+
+        .permalink:after, .date:after, .time:after, .share:after {
+            content: " ―";
+        }
     
     .last.postLinks {
         border-top: 2px solid #CCC;

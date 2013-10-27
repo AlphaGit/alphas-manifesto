@@ -93,6 +93,14 @@
                 }
                 $embedded.removeAttr('width');
             });
+
+            // handle automated search on enter for search fields
+            $('.searchForm input.searchTerm').keyup(function(evt) {
+                if (event.which == 13) {
+                    evt.preventDefault();
+                    $(this).parentsUntil('.searchForm').submit();
+                }
+            });
         });
     </script>
 </head>
@@ -122,7 +130,7 @@
                         <?php } ?>
                     </hgroup>
                 </div>
-                <div class="twocol last searchForm">
+                <div class="twocol last">
                     <?php get_search_form() ?>
                 </div>
             </div>
