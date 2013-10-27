@@ -492,6 +492,11 @@ ul.children { /* TODO: Fix hierarchical comments */
 	font-size: 0.7em;
 }
 
+.gallery {
+    /* using important rules because wordpress writes inline styles for galleries and while
+    they can be deactivated, that will remove ALL styles that wordpress uses for them*/
+    margin-bottom: 1em !important;
+}
 
 /* Search form and search results */
 header .searchForm {
