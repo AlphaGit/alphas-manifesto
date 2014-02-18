@@ -151,8 +151,8 @@ p, address, ul, ol, #post div {
 }
 
 article h1 {
-    font-family: garamond, georgia, 'times new roman', serif;
-    font-size: 2.5em;
+    font-family: georgia, 'times new roman', serif;
+    font-size: 2em;
     margin-top: 1em;
 }
 
@@ -165,8 +165,8 @@ article h1 {
     }
 
 h2 {
-    font-size: 1.8em; /* TODO maybe this rule can be deleted */
-    font-family: garamond, georgia, 'times new roman', serif;
+    font-size: 1.5em; /* TODO maybe this rule can be deleted */
+    font-family: georgia, 'times new roman', serif;
     font-weight: bold;
 }
 
@@ -175,7 +175,7 @@ h2 {
         margin-bottom: 0.2em;
         font-weight: normal;
         font-variant: small-caps;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
         article h2.subtitle {
@@ -193,11 +193,11 @@ h2 {
 
 article h3 {
     font-variant: small-caps;
-    font-size: 1.5em;
+    font-size: 1.17em;
 }
 
 article h4 {
-    font-size: 1.2em;
+    font-size: 0.83em;
     font-variant: small-caps;
 }
 
@@ -205,11 +205,12 @@ article h4 {
 article h5 {
     font-variant: small-caps;
     font-weight: bold;
+    font-size: .83em;
 }
 
 /* TODO this level needs redesign, is just too small compared with regular text */
 article h6 {
-    font-variant: small-caps;
+    font-size: .75em;
 }
 
 article address {
