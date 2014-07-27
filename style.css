@@ -45,10 +45,10 @@ cite, q, em, var, i {
 
 blockquote {
     padding: 1em 1em 1em 2em;
-    background-color: #EEE;
-    background-image: url('openingQuotes.png'), url('closingQuotes.png');
-    background-repeat: no-repeat, no-repeat;
-    background-position: 1em 1em, bottom right;
+    background:
+        url('openingQuotes.png') 1em 1em no-repeat,
+        url('closingQuotes.png') bottom right no-repeat,
+        #EEE;
     font-style: italic;
     margin-bottom: 1em;
 }
