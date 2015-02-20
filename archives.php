@@ -1,8 +1,8 @@
-<?php 
+<?php
 /**
- * Template Name: Archives Template 
+ * Template Name: Archives Template
 */
-    get_header(); 
+    get_header();
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
     $show_author_name = get_option( 'show_author_name' );
 ?>
@@ -15,19 +15,19 @@
                 <?php if($show_author_name) { ?>
                     <div class="author">por <span class="name"><?php the_author() ?></span></div>
                 <?php } ?>
-                <?php edit_post_link('Editar...', '<div class="edit">', '</div>') ?>
+                <?php edit_post_link('Edit...', '<div class="edit">', '</div>') ?>
             </div>
             <div id="post-<?php echo the_ID() ?>" <?php post_class('post eightcol') ?>>
-                <?php the_content('(Leer más &rarr;)'); ?>
+                <?php the_content('(Read more &rarr;)'); ?>
 
-                <h2>Archivos por fecha:</h2>
+                <h2>Archives by date:</h2>
                 <ul>
                     <?php wp_get_archives(array(
                         'show_post_count' => true
                     )); ?>
                 </ul>
 
-                <h2>Archivos por categoría:</h2>
+                <h2>Archives by category:</h2>
                 <ul>
                     <?php wp_list_categories(array(
                         'show_count' => true,
@@ -35,10 +35,10 @@
                     )); ?>
                 </ul>
 
-                <h2>Archivos por tema:</h2>
+                <h2>Archives by subject:</h2>
                 <ul>
                 <?php
-                    $tags = get_tags(); 
+                    $tags = get_tags();
                     foreach ($tags as $tag) {
                         $tagLink = get_tag_link($tag->term_id);
                         echo "<li><a href='{$tagLink}' title='{$tag->name}'>{$tag->name}</a> ({$tag->count})</li>";
@@ -49,12 +49,12 @@
             <div class="twocol last postLinks">
                 <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
                 <?php wp_link_pages(array(
-                    'before' => '<div class="postPages"><p>Páginas:</p><ul>',
+                    'before' => '<div class="postPages"><p>Pages:</p><ul>',
                     'after' => '</ul></div>',
                     'link_before' => '<li>',
                     'link_after' => '</li>',
                     'next_or_number' => 'number',
-                    'pagelink' => 'Página %'
+                    'pagelink' => 'Page %'
                 )); ?>
             </div>
         </article>

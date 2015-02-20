@@ -1,5 +1,5 @@
-<?php 
-    get_header(); 
+<?php
+    get_header();
     $blogUrl = get_bloginfo('url');
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
 ?>
@@ -8,10 +8,10 @@
         <div class="metadata twocol"> </div>
         <div class="eightcol postContent">
             <h1>Oooops!</h1>
-            <h2 class="subtitle">Nada por aquí. Tampoco por acá.</h2>
-            <p>No hay nada por aquí &ndash; ¿quizá lo que estabas buscando está en otro lado?</p>
-            <p>Puedes intentar <a href="<?php echo $blogUrl ?>">visitando la página principal</a>
-                o usando el siguiente formulario de búsqueda: </p>
+            <h2 class="subtitle">Nothing over here. Neither over there.</h2>
+            <p>There's nothing over here &ndash; maybe what you were looking for is somewhere else?</p>
+            <p>You can <a href="<?php echo $blogUrl ?>">try visiting the main page</a>
+                or using the following search form:</p>
             <?php get_search_form(); ?>
         </div>
         <div class="twocol last"> </div>

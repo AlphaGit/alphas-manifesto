@@ -32,7 +32,7 @@
                     <p><strong>Trackback:</strong> <?php comment_author_link(); ?></p>
                 </div>
                 <div class="twocol last"></div>
-        <?php 
+        <?php
                     break;
                 default:
         ?>
@@ -46,7 +46,7 @@
                             <time pubdate datetime="<?php echo get_comment_time("c") ?>"><?php echo get_comment_time(); ?></time>
                         </div>
                         <?php if ( $comment->comment_approved == '0' ) { ?>
-                            <p class="needModeration">El comentario está pendiente de aprobación.</p>
+                            <p class="needModeration">The comment is pending moderation.</p>
                         <?php } else {
                             comment_text();
                         } ?>
@@ -58,22 +58,22 @@
                             'depth' => $depth,
                             'respond_id' => 'commentForm',
                             'max_depth' => $args['max_depth'],
-                            'reply_text' => '(Responder)',
-                            'login_text' => '(Debes registrarte antes de dejar un comentario)'
+                            'reply_text' => '(Reply)',
+                            'login_text' => '(You need to log in before leaving a comment)'
                         )) ?>
 
-                        <?php edit_comment_link(__('(Editar)'), null, ' | '); ?>
+                        <?php edit_comment_link(__('(Edit)'), null, ' | '); ?>
 
                         <a href="<?php echo get_comment_link(); ?>">(Permalink)</a>
                     </div>
                     <hr class="commentSeparator" />
                 </div>
                 <div class="twocol last"></div>
-        <?php 
+        <?php
             } // switch ($comment->comment_type) {
         ?>
             </article>
         <?php
         } // function alphasmanifesto_comment
-    } // if (!function_exists("alphasmanifesto_comment")) 
+    } // if (!function_exists("alphasmanifesto_comment"))
 ?>

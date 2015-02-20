@@ -1,5 +1,5 @@
-<?php 
-    get_header(); 
+<?php
+    get_header();
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
 ?>
     <?php while(have_posts()) : the_post(); ?>
@@ -7,31 +7,31 @@
                 <article id="post-<?php echo the_ID() ?>" <?php post_class('post row') ?>>
                     <div class="metadata twocol"> </div>
                     <div class="eightcol postContent">
-                        <?php the_content('(Leer más &rarr;)'); ?>
+                        <?php the_content('(Read more &rarr;)'); ?>
                     </div>
                     <div class="twocol last postLinks">
                         <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
-                        <?php 
+                        <?php
                             $commentsNumber = get_comments_number();
                             $commentNumberText = $commentsNumber > 0
                                 ? number_format_i18n($commentsNumber)
-                              . " comentario"
+                              . " comment"
                               . ($commentsNumber > 1 ? "s" : "")
-                          : "Sin comentarios a&uacute;n.";     
+                          : "No comments yet.";
                         ?>
                         <div class="commentCount"><a href="<?php the_permalink() ?>#comments"><?php echo $commentNumberText ?></a></div>
                         <?php wp_link_pages(array(
-                            'before' => '<div class="postPages"><p>Páginas:</p><ul>',
+                            'before' => '<div class="postPages"><p>Pages:</p><ul>',
                             'after' => '</ul></div>',
                             'link_before' => '<li>',
                             'link_after' => '</li>',
                             'next_or_number' => 'number',
-                            'pagelink' => 'Página %'
+                            'pagelink' => 'Page %'
                         )); ?>
                     </div>
                 </article>
-                <?php 
-                  comments_template(); 
+                <?php
+                  comments_template();
             ?>
         </div>
         <footer class="container">
@@ -47,12 +47,12 @@
                             ?> &bull; <?php
                         }
 
-                        next_post_link(); ?> 
+                        next_post_link(); ?>
                     </p>
                 </div>
                 <div class="twocol last"></div>
             </div>
         </footer>
     <?php endwhile; // while (have_posts()) ?>
-    
+
 <?php get_footer(); ?>

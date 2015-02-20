@@ -1,2 +1,4 @@
 # deployment script for continuous deployment
 deploy_*.php
+*.sublime-project
+*.sublime-workspace

@@ -14,27 +14,27 @@ if (!function_exists("alphasmanifesto_admin_menu")) {
 
 if (!function_exists("alphasmanifesto_options_page")) {
 	function alphasmanifesto_options_page() {
-		//global $select_options; 
+		//global $select_options;
 		if ( ! isset( $_REQUEST['settings-updated'] ) )
-			$_REQUEST['settings-updated'] = false; 
+			$_REQUEST['settings-updated'] = false;
 	?>
 		<div>
-			<h1>Opciones del Tema</h1>
+			<h1>Theme options</h1>
 			<?php if ( false !== $_REQUEST['settings-updated'] ) { ?>
 				<div>
-					<p><em>Opciones guardadas</em></p>
+					<p><em>Options saved</em></p>
 				</div>
 			<?php } ?>
 
 			<form method="post" action="options.php">
-				<?php settings_fields( 'alphasmanifesto_options' ); ?>  
+				<?php settings_fields( 'alphasmanifesto_options' ); ?>
 
-				<?php $show_author_name = get_option( 'show_author_name' ); ?> 
+				<?php $show_author_name = get_option( 'show_author_name' ); ?>
 				<input id="show-author-name" name="show_author_name" type="checkbox" <?php checked( 'on', $show_author_name ) ?> />
-				<label for="show-author-name">Mostrar nombre de autor en los posts</label>
+				<label for="show-author-name">Display the author name on posts</label>
 
 				<br />
-				<input type="submit" value="Enviar" />
+				<input type="submit" value="Save" />
 			</form>
 		</div>
 		<?php
