@@ -2,7 +2,7 @@
     $blogname = get_bloginfo('name', 'Display');
     $postTitle = get_the_title();
 
-    $browserTitle = is_singular() 
+    $browserTitle = is_singular()
         ? $postTitle . " | ". $blogname
         : $blogname;
 
@@ -24,15 +24,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><?php echo $browserTitle ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!--[if lte IE 9]><link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/ie.css" type="text/css" media="screen" /><![endif]-->
-    <link rel="stylesheet" href="<?php echo "$stylesheetDir/1140.css" ?>" type="text/css" media="screen" />
-    <link rel="stylesheet" href="<?php echo "$stylesheetDir/reset.css" ?>" type="text/css" media="screen" />
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
-    <link rel="stylesheet" href="<?php echo "$stylesheetDir/print.css" ?>" type="text/css" media="print" />
+    <link rel="stylesheet" href="<?php echo "$stylesheetDir/1140.css" ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo "$stylesheetDir/reset.css" ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-	<?php 
+	<?php
     if (!function_exists("alphasmanifesto_enqueue_scripts")) {
         function alphasmanifesto_enqueue_scripts() {
             wp_enqueue_script("jquery");
@@ -48,7 +47,7 @@
     <?php wp_head(); ?>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
-            <?php 
+            <?php
                 if (has_nav_menu('footer-menu')) {
                     ?>
                         $('#dockMenu').jqDock({
@@ -64,8 +63,8 @@
                                 menu.one('mousemove', function(){
                                     menu.stop().animate(
                                         {bottom:'1em'},
-                                        { 
-                                            duration: 400, 
+                                        {
+                                            duration: 400,
                                             complete: function() {
                                                 menu.trigger('docknudge');
                                             }
@@ -73,12 +72,12 @@
                                     );
                                     return false;
                                 });
-                            }       
+                            }
                         });
                     <?php
                 }
             ?>
-            
+
             // embed resize fix
             $('article iframe, article video, article embed').each(function() {
                 var $embedded = $(this);
@@ -116,9 +115,9 @@
                         <h1>
                             <?php if(!is_singular()) { ?>
                                 <a href="<?php echo $blogLink ?>">
-                            <?php } 
+                            <?php }
                                 echo $pageTitle;
-                                if(!is_singular()) { 
+                                if(!is_singular()) {
                             ?>
                                 </a>
                             <?php } ?>

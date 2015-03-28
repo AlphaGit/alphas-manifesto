@@ -130,7 +130,7 @@ sup {
     position: relative;
 }
 
-p, address, ul, ol, #post div { 
+p, address, ul, ol, #post div {
     margin-bottom: 1em;
 }
 
@@ -147,7 +147,7 @@ p, address, ul, ol, #post div {
     border-bottom: 2px solid #CCC;
     margin-bottom: 1em;
     padding-bottom: 1em;
-    margin-top: 1em;    
+    margin-top: 1em;
 }
 
 article h1 {
@@ -364,7 +364,7 @@ article.comment {
 
 .commentAuthor {
     float: left;
-    margin-right: 1em; 
+    margin-right: 1em;
     margin-bottom: 1em;
     width: 100px;
 }
@@ -377,7 +377,7 @@ article.comment {
     }
 
     /* nothing next to the author in a comment box should push up for margins */
-    .commentAuthor + * { 
+    .commentAuthor + * {
         margin-top: 0;
     }
 
@@ -558,9 +558,9 @@ article .searchForm label {
 
 /* Dock navigation menu */
 #dockMenu {
-    position:fixed; 
-    bottom:1em; 
-    width:100%; 
+    position:fixed;
+    bottom:1em;
+    width:100%;
     display:none;
 }
 
@@ -569,15 +569,15 @@ article .searchForm label {
         padding-bottom: 1em;
     }
     #dockMenu div.jqDock {
-        cursor:pointer; 
-        background-color: rgba(255, 255, 255, 0.5); 
+        cursor:pointer;
+        background-color: rgba(255, 255, 255, 0.5);
     }
     #dockMenu div.jqDockLabel {
-        font-weight:bold; 
-        color: black; 
-        white-space:nowrap; 
+        font-weight:bold;
+        color: black;
+        white-space:nowrap;
         font-variant: small-caps;
-        cursor:pointer; 
+        cursor:pointer;
         bottom: -1em !IMPORTANT; /* style forced by jquery.jqdock  */
         background-color: rgba(255, 255, 255, 0.5);
     }
@@ -616,24 +616,24 @@ article iframe, article video, article embed {
     #dockMenu, .jqDockWrap {
         display: none;
     }
-    
+
     #logo { display: none; }
-    
+
     #titleContainer .twocol.searchForm {
         padding-top: 0;
         padding-bottom: 1em;
     }
-    
+
     header .searchForm label {
         color: #DDD;
         display: inline;
     }
-    
+
     .commentCount {
         display: inline;
         border-top: none;
     }
-    
+
     .permalink,
     .datetime {
         display: inline;
@@ -642,16 +642,79 @@ article iframe, article video, article embed {
         .permalink:after, .date:after, .time:after, .share:after {
             content: " ―";
         }
-    
+
     .last.postLinks {
         border-top: 2px solid #CCC;
         padding-top: 1em;
         margin-right: 20px;
         margin-left: 20px;
     }
-    
+
     footer {
         margin-bottom: 0;
     }
 }
 
+@media print {
+    a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    input,
+    textarea,
+    footer,
+    nav,
+    #commentForm,
+    #logo,
+    #dockMenu,
+    #dockMenu div.jqDockWrap,
+    #dockMenu div.jqDock,
+    #dockMenu div.jqDockLabel,
+    .permalink,
+    .share,
+    .commentCount,
+    .post-edit-link {
+        display: none;
+    }
+
+    .categories:before {
+        content: "Categories: ";
+    }
+
+    .title h1 {
+        margin-bottom: 0;
+    }
+
+    .title h2 {
+        margin-top: 0;
+        font-style: italic;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+
+    .tags {
+        border-top: 1px solid black;
+    }
+
+    p, blockquote {
+        widows: 200;
+    }
+
+    @page { margin: 0.5cm; }
+
+    .date, .time { display:  inline; }
+
+    .metadata {
+        border-bottom: 1px solid black;
+    }
+
+    article {
+        page-break-after: always;
+    }
+
+    article:last-child {
+        page-break-after: avoid;
+    }
+}
