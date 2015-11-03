@@ -13,6 +13,55 @@ License URI:
 Some comments for the future.
 */
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 /* generic elements */
 
 body {
@@ -150,6 +199,10 @@ p, address, ul, ol, #post div {
     margin-top: 1em;
 }
 
+article {
+    padding-top: 1em;
+}
+
 article h1 {
     font-family: georgia, 'times new roman', serif;
     font-size: 2em;
@@ -227,6 +280,11 @@ article h1 a {
     color: black;
 }
 
+img, object, embed {
+    max-width: 100%;
+    height: auto;
+}
+
 /* header styles */
 
 header {
@@ -259,7 +317,61 @@ header {
         word-wrap: break-word;
     }
 
-#titleContainer>.row {
+/* Grid styles */
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.twocol, .eightcol {
+    margin-right: 3.8%;
+    float: left;
+    min-height: 1px;
+}
+
+.row .twocol {
+    width: 13.45%;
+}
+
+.row .eightcol {
+    width: 65.4%;
+}
+
+.last {
+    margin-right: 0px;
+}
+
+/* Grid styles, mobile */
+
+@media handheld, only screen and (max-width: 800px) {
+
+    .row, .container {
+        min-width: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .row .twocol, .row .eightcol {
+        width: auto;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+#titleContainer > .row {
     margin: 0 auto;
     padding-bottom: 0;
 }

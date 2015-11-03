@@ -25,9 +25,6 @@
     <title><?php echo $browserTitle ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--[if lte IE 9]><link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/ie.css" type="text/css" media="screen" /><![endif]-->
-    <link rel="stylesheet" href="<?php echo "$stylesheetDir/1140.css" ?>" type="text/css" />
-    <link rel="stylesheet" href="<?php echo "$stylesheetDir/reset.css" ?>" type="text/css" />
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
