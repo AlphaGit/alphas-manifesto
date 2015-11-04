@@ -49,14 +49,51 @@ body {
 ol, ul {
     list-style: none;
 }
-blockquote, q {
+
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+blockquote {
 }
+
+
+
+blockquote {
+    background: #eee;
+    quotes: "\201C""\201D""\2018""\2019";
+    padding: 2em 1em 1em 2em;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+    blockquote:before, blockquote:after {
+        color: #bbb;
+        font-size: 6em;
+        line-height: 0.1em;
+    }
+
+    blockquote:before {
+        content: open-quote;
+        vertical-align: -0.4em;
+        margin-right: 0.1em;
+    }
+
+    blockquote:after {
+        content: close-quote;
+        vertical-align: -0.6em;
+    }
+
+    blockquote cite, blockquote q, blockquote em, blockquote var, blockquote i, blockquote p {
+        font-style: normal;
+        display: inline;
+    }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -91,20 +128,6 @@ a {
 cite, q, em, var, i {
     font-style: italic;
 }
-
-blockquote {
-    padding: 1em 1em 1em 2em;
-    background:
-        url('openingQuotes.png') 1em 1em no-repeat,
-        url('closingQuotes.png') bottom right no-repeat,
-        #EEE;
-    font-style: italic;
-    margin-bottom: 1em;
-}
-
-    blockquote cite, blockquote q, blockquote em, blockquote var, blockquote i {
-        font-style: normal;
-    }
 
 strong {
     font-weight: bold;
