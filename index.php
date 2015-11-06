@@ -6,13 +6,7 @@
     <div id="postsContainer" class="container">
         <?php while(have_posts()) : the_post(); ?>
             <article id="post-<?php echo the_ID() ?>" <?php post_class('post row') ?>>
-                <div class="metadata twocol">
-                    <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime"><?php the_time(get_option('date_format')); ?><br/><?php the_time() ?></time>
-                    <div class="categories"><?php the_category(', ') ?></div>
-                    <?php if($show_author_name) { ?>
-                        <div class="author">por <span class="name"><?php the_author() ?></span></div>
-                    <?php } ?>
-                    <?php edit_post_link('Edit...', '<div class="edit">', '</div>') ?>
+                <div class="twocol">
                 </div>
                 <div class="eightcol postContent">
                     <?php
@@ -39,7 +33,13 @@
 
                     <?php the_content('(Read more &rarr;)'); ?>
                 </div>
-                <div class="twocol last postLinks">
+                <div class="twocol last postLinks metadata">
+                    <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime">
+                        <span class="date"><?php the_time(get_option('date_format')); ?></span>
+                        <span class="time"><?php the_time() ?></span>
+                    </time>
+                    <div class="categories"><?php the_category(', ') ?></div>
+
                     <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
                     <?php
                         $commentsNumber = get_comments_number();
@@ -65,6 +65,11 @@
                             ? the_tags()
                             : "(No tags)";
                     ?></p></div>
+
+                    <?php if($show_author_name) { ?>
+                        <div class="author">por <span class="name"><?php the_author() ?></span></div>
+                    <?php } ?>
+                    <?php edit_post_link('Edit...', '<div class="edit">', '</div>') ?>
                 </div>
             </article>
             <?php  endwhile; // while (have_posts())

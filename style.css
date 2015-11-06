@@ -428,11 +428,15 @@ article .metadata, article .postLinks {
     font-size: 0.9em;
 }
 
-.tags, .commentCount, .postPages, .edit {
+.metadata div {
     border-top: 2px solid #CCC;
     margin-top: 1em;
     padding-top: 1em;
 }
+
+    .metatada div:last {
+        border: none;
+    }
 
 .share {
     margin-top: 0.5em;
@@ -457,6 +461,10 @@ footer {
     footer p {
         margin-bottom: 0;
     }
+
+.date, .time {
+    display: block;
+}
 
 /* comment section */
 #reply-title {
@@ -658,7 +666,8 @@ ul.children { /* TODO: Fix hierarchical comments */
 
 /* Search form and search results */
 header .searchForm {
-    margin-top: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
     header .searchForm .searchSubmit,
@@ -764,17 +773,21 @@ article iframe, article video, article embed {
         display: inline;
     }
 
-    .commentCount {
+    .metadata div {
+        border: none;
         display: inline;
-        border-top: none;
     }
 
     .permalink,
-    .datetime {
+    .datetime,
+    .date,
+    .time {
         display: inline;
     }
 
-        .permalink:after, .date:after, .time:after, .share:after {
+        .datetime:after,
+        .categories:after,
+        .permalink:after {
             content: " ―";
         }
 
