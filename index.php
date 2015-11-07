@@ -10,21 +10,19 @@
                 </div>
                 <div class="eightcol postContent">
                     <?php
-                        $the_title = get_the_title();
-                        $the_subtitle = get_post_meta(get_the_ID(), 'subtitle', true);
+                        if (!is_singular()) {
+                            // show title and subtitle for each post
 
-                        if (strlen($the_title) || strlen($the_subtitle)) {
+                            $the_title = get_the_title();
+                            $the_subtitle = get_post_meta(get_the_ID(), 'subtitle', true);
+
                             ?>
                                 <hgroup>
-                                    <?php if(strlen($the_title) > 0) {
-                                        ?>
-                                            <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
-                                        <?php
-                                    } ?>
+                                    <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
                                     <?php if(strlen($the_subtitle) > 0) {
-                                        ?>
-                                            <h2 class="subtitle"><?php echo $the_subtitle ?></h2>
-                                        <?php
+                                    ?>
+                                        <h2 class="subtitle"><?php echo $the_subtitle ?></h2>
+                                    <?php
                                     } ?>
                                 </hgroup>
                             <?php
@@ -73,10 +71,15 @@
                 </div>
             </article>
             <?php  endwhile; // while (have_posts())
+
+            if (is_singular() && !post_password_required()) {
+                comments_template();
+            }
         ?>
     </div>
     <?php
-        if (!empty(get_posts_nav_link())) {
+        // in multiple post pages, show navigation only if there is navigation to show
+        if (!is_singular() && !empty(get_posts_nav_link())) {
     ?>
         <footer class="container">
             <div class="row">
@@ -89,5 +92,35 @@
         </footer>
     <?php
         }
-    ?>
-<?php get_footer(); ?>
+
+        // in single post pages, show navigation only if there are posts "around" it
+        if (is_singular()) {
+            //knowing if there'll be a next or a previous post
+            //http://stackoverflow.com/questions/3003563/wordpress-previous-post-link-next-post-link-placeholder
+            $previousPost = get_adjacent_post(false, '', true);
+            $nextPost = get_adjacent_post(false, '', false);
+
+            if ($nextPost || $previousPost) { ?>
+                <footer class="container">
+                    <div class="row">
+                        <div class="twocol"></div>
+                        <div class="eightcol">
+                            <p>
+                                <?php previous_post_link();
+                                
+                                if($nextPost && $previousPost) {
+                                    ?> &bull; <?php
+                                }
+
+                                next_post_link(); ?>
+                            </p>
+                        </div>
+                        <div class="twocol last"></div>
+                    </div>
+                </footer>
+        <?php 
+            }
+        }
+get_footer();
+
+?>
