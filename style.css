@@ -501,10 +501,6 @@ article.comment {
     display: block;
 }
 
-.commentAvatar {
-    /*text-align: center;*/
-}
-
 .commentAuthor {
     float: left;
     margin-right: 1em;
@@ -555,11 +551,15 @@ article.comment {
         font: normal 1em/1.5 Georgia, serif;
     }
 
-hr.commentSeparator {
+.commentSeparator {
     clear: both;
     margin-bottom: 0;
     margin-top: 1em;
 }
+
+    .commentSeparator:last-child {
+        display: none;
+    }
 
 #comment {
     width: 100%;
