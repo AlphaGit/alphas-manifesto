@@ -700,32 +700,6 @@ article .searchForm label {
         padding-top: 0;
     }
 
-/* Dock navigation menu */
-#dockMenu {
-    position:fixed;
-    bottom:1em;
-    width:100%;
-    display:none;
-}
-
-    #dockMenu div.jqDockWrap {
-        margin:0 auto 0 auto;
-        padding-bottom: 1em;
-    }
-    #dockMenu div.jqDock {
-        cursor:pointer;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-    #dockMenu div.jqDockLabel {
-        font-weight:bold;
-        color: black;
-        white-space:nowrap;
-        font-variant: small-caps;
-        cursor:pointer;
-        bottom: -1em !IMPORTANT; /* style forced by jquery.jqdock  */
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
 /* Fixes for general embeds */
 article iframe, article video, article embed {
     width: 100%;

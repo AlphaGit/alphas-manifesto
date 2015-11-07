@@ -14,7 +14,7 @@
 		? get_post_meta(get_the_ID(), 'subtitle', true)
 		: get_bloginfo('description', 'Display');
 
-	$blogLink = home_url();
+    $currentLink = home_url(add_query_arg(NULL, NULL));
 
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
 ?>
@@ -32,7 +32,6 @@
     if (!function_exists("alphasmanifesto_enqueue_scripts")) {
         function alphasmanifesto_enqueue_scripts() {
             wp_enqueue_script("jquery");
-            if (has_nav_menu('footer-menu')) wp_enqueue_script('jqdock', get_template_directory_uri() . '/jquery.jqdock.min.js', array('jquery'));
             if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
                 wp_enqueue_script( 'comment-reply' );
             }
@@ -43,37 +42,6 @@
     <?php wp_head(); ?>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
-            <?php
-                if (has_nav_menu('footer-menu')) {
-                    ?>
-                        $('#dockMenu').jqDock({
-                            align: 'bottom',
-                            labels: 'bc',
-                            fadeIn: 2000,
-                            idle: 500,
-                            onSleep: function(){ //scope (this) is the #menu element
-                                var menu = $(this);
-                                //slide the entire original menu off the top of the window...
-                                menu.animate({bottom:-1 * menu.height() + 20},800);
-                                //bind a one-off mousemove event to the silhouette child...
-                                menu.one('mousemove', function(){
-                                    menu.stop().animate(
-                                        {bottom:'1em'},
-                                        {
-                                            duration: 400,
-                                            complete: function() {
-                                                menu.trigger('docknudge');
-                                            }
-                                        }
-                                    );
-                                    return false;
-                                });
-                            }
-                        });
-                    <?php
-                }
-            ?>
-
             // embed resize fix
             $('article iframe, article video, article embed').each(function() {
                 var $embedded = $(this);
@@ -109,14 +77,9 @@
                 <div class="eightcol">
                     <hgroup class="title">
                         <h1>
-                            <?php if(!is_singular()) { ?>
-                                <a href="<?php echo $blogLink ?>">
-                            <?php }
-                                echo $pageTitle;
-                                if(!is_singular()) {
-                            ?>
-                                </a>
-                            <?php } ?>
+                            <a href="<?php echo esc_url($currentLink) ?>">
+                            <?php echo $pageTitle; ?>
+                            </a>
                         </h1>
                         <?php if(strlen($pageSubtitle) > 0) { ?>
                             <h2><?php echo $pageSubtitle ?></h2>
