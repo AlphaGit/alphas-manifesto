@@ -49,25 +49,31 @@
                     }
                 ?>
         </div>
-        <footer class="container">
-            <div class="row">
-                <div class="twocol"></div>
-                <div class="eightcol">
-                    <p>
-                        <?php previous_post_link();
+        <?php 
+            //knowing if there'll be a next or a previous post
+            //http://stackoverflow.com/questions/3003563/wordpress-previous-post-link-next-post-link-placeholder
+            $previousPost = get_adjacent_post(false, '', true);
+            $nextPost = get_adjacent_post(false, '', false);
 
-                        //knowing if there'll be a next or a previous post
-                        //http://stackoverflow.com/questions/3003563/wordpress-previous-post-link-next-post-link-placeholder
-                        if(get_adjacent_post(false, '', true) && get_adjacent_post(false, '', false)) {
-                            ?> &bull; <?php
-                        }
+            if ($nextPost || $previousPost) { ?>
+                <footer class="container">
+                    <div class="row">
+                        <div class="twocol"></div>
+                        <div class="eightcol">
+                            <p>
+                                <?php previous_post_link();
+                                
+                                if($nextPost && $previousPost) {
+                                    ?> &bull; <?php
+                                }
 
-                        next_post_link(); ?>
-                    </p>
-                </div>
-                <div class="twocol last"></div>
-            </div>
-        </footer>
-    <?php endwhile; // while (have_posts()) ?>
+                                next_post_link(); ?>
+                            </p>
+                        </div>
+                        <div class="twocol last"></div>
+                    </div>
+                </footer>
+        <?php }
+    endwhile; // while (have_posts())
 
-<?php get_footer(); ?>
+get_footer(); ?>

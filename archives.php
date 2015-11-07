@@ -59,6 +59,4 @@
             </div>
         </article>
     </div>
-    <footer class="container">
-    </footer>
 <?php get_footer(); ?>

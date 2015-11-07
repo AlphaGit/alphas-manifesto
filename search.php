@@ -77,13 +77,19 @@
             <?php  endwhile; // while (have_posts())
         ?>
     </div>
-    <footer class="container">
-        <div class="row">
-            <div class="twocol"></div>
-            <div class="eightcol">
-                <p><?php posts_nav_link(" &bull; ", "&laquo; Next posts", "Previous posts &raquo;"); ?></p>
+    <?php
+        if (!empty(get_posts_nav_link())) {
+    ?>
+        <footer class="container">
+            <div class="row">
+                <div class="twocol"></div>
+                <div class="eightcol">
+                    <p><?php posts_nav_link(" &bull; ", "&laquo; Next posts", "Previous posts &raquo;"); ?></p>
+                </div>
+                <div class="twocol last"></div>
             </div>
-            <div class="twocol last"></div>
-        </div>
-    </footer>
+        </footer>
+    <?php
+        }
+    ?>
 <?php get_footer(); ?>
