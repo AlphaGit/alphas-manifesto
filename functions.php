@@ -7,7 +7,6 @@
     // Custom menu support
 
     require_once 'custom_menu.php';
-    require_once 'custom_menu_setup.php';
 
     /********************************************************************/
     // Custom theme options
