@@ -69,7 +69,7 @@
                 </div>
                 <div class="twocol last"></div>
         <?php
-            } // switch ($comment->comment_type) {
+            } // switch ($comment->comment_type)
         ?>
             </article>
         <?php

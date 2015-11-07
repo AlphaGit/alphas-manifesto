@@ -8,7 +8,7 @@ if (!function_exists("alphasmanifesto_admin_init")) {
 
 if (!function_exists("alphasmanifesto_admin_menu")) {
 	function alphasmanifesto_admin_menu() {
-		add_theme_page('Opciones del tema', 'Opciones del tema', 'edit_theme_options', 'alphasmanifesto_options_page', 'alphasmanifesto_options_page');
+		add_theme_page('Theme Options', 'Theme Options', 'edit_theme_options', 'alphasmanifesto_options_page', 'alphasmanifesto_options_page');
 	}
 }
 
