@@ -91,7 +91,7 @@
             $('.searchForm input.searchTerm').keyup(function(evt) {
                 if (event.which == 13) {
                     evt.preventDefault();
-                    $(this).parentsUntil('.searchForm').submit();
+                    $(this).closest('.searchForm').submit();
                 }
             });
         });
