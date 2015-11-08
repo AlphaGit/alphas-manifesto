@@ -14,6 +14,7 @@
 		? get_post_meta(get_the_ID(), 'subtitle', true)
 		: get_bloginfo('description', 'Display');
 
+    $blogLink = home_url();
     $currentLink = home_url(add_query_arg(NULL, NULL));
 
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
@@ -67,28 +68,24 @@
 </head>
 <body <?php body_class(); ?>>
     <header>
-        <div id="titleContainer" class="container">
-            <div class="row">
-                <div class="twocol">
-                    <div id="logo">
-                        <a href="<?php echo $blogLink ?>"><img src="<?php echo "$stylesheetDir/logo.png" ?>" alt="logo" /></a>
-                    </div>
-                </div>
-                <div class="eightcol">
-                    <hgroup class="title">
-                        <h1>
-                            <a href="<?php echo esc_url($currentLink) ?>">
-                            <?php echo $pageTitle; ?>
-                            </a>
-                        </h1>
-                        <?php if(strlen($pageSubtitle) > 0) { ?>
-                            <h2><?php echo $pageSubtitle ?></h2>
-                        <?php } ?>
-                    </hgroup>
-                </div>
-                <div class="twocol last">
-                    <?php get_search_form() ?>
-                </div>
+        <div class="columnContainer titleRow">
+            <div class="column colSize1 logoContainer">
+                <a href="<?php echo $blogLink ?>"><img src="<?php echo "$stylesheetDir/logo.png" ?>" alt="logo" /></a>
+            </div>
+            <div class="column colSize4">
+                <hgroup class="title">
+                    <h1>
+                        <a href="<?php echo esc_url($currentLink) ?>">
+                        <?php echo $pageTitle; ?>
+                        </a>
+                    </h1>
+                    <?php if(strlen($pageSubtitle) > 0) { ?>
+                        <h2><?php echo $pageSubtitle ?></h2>
+                    <?php } ?>
+                </hgroup>
+            </div>
+            <div class="column colSize1">
+                <?php get_search_form() ?>
             </div>
         </div>
     </header>

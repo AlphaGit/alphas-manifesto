@@ -44,6 +44,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 body {
+    font-size: 16px;
     line-height: 1;
 }
 ol, ul {
@@ -58,11 +59,6 @@ q {
         content: '';
         content: none;
     }
-
-blockquote {
-}
-
-
 
 blockquote {
     background: #eee;
@@ -100,6 +96,10 @@ table {
 }
 
 /* generic elements */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 
 body {
     font: normal 1em/1.5 Georgia, serif;
@@ -215,26 +215,17 @@ p, address, ul, ol, #post div {
         font-size: 0.8em;
     }
 
-.row {
-    border-bottom: 2px solid #CCC;
+article.columnContainer {
     margin-bottom: 1em;
     padding-bottom: 1em;
-    margin-top: 1em;
-}
-
-article {
     padding-top: 1em;
+    border-bottom: 2px solid #CCC;
 }
 
 article h1 {
     font-family: georgia, 'times new roman', serif;
     font-size: 2em;
-    margin-top: 1em;
 }
-
-    article h1:first-child {
-        margin-top: 0;
-    }
 
     article h1 + h2 {
         margin-top: 0.5em;
@@ -262,10 +253,6 @@ h2 {
             font-weight: normal;
             margin-top: 0;
         }
-
-    article hgroup {
-        margin-bottom: 1em;
-    }
 
 article h3 {
     font-variant: small-caps;
@@ -317,7 +304,7 @@ header {
     box-shadow: 10px -5px 5px 10px #888;
 }
 
-    header .row {
+    header {
         border-bottom: none;
     }
 
@@ -342,78 +329,101 @@ header {
 
 /* Grid styles */
 
-.container {
-    padding-left: 20px;
-    padding-right: 20px;
-}
+/*
+    We'll assume 12 columns maxed at 1140px.
+    We'll have 16px separators (1em), so we'll use 80px columns and 2px margin left and right.
+    176px x 6 columns   = 1056px
+    16px x 5 separators = 80px
+    2px  x 2  margins   = 4px
+                          ------
+                          1140px
 
-.row {
+    Header:
+        Our columns will be distributed in 1-4-1 form, so widths for each of them will be:
+        1st column: 176px
+        2nd column: 176px * 4 + 16px * 3 = 704px + 48px = 752px
+        3rd column: 176px
+
+    Body:
+        Menu/Posts: Distributed 1-5
+        Inside posts: posts/metadata: 4-1
+
+        
+*/
+
+.columnContainer {
     max-width: 1140px;
     margin: 0 auto;
     overflow: hidden;
+    padding-top: 1em;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
-.twocol, .eightcol {
-    margin-right: 3.8%;
+    .columnContainer:after {
+        content: " ";
+        clear: both;
+    }
+
+.column {
     float: left;
+    margin-right: 16px;
     min-height: 1px;
 }
 
-.row .twocol {
-    width: 13.45%;
+    .column .columnContainer {
+        /* do not accumulate padding if columns are nested */
+        padding-left: 0; 
+        padding-right: 0;
+    }
+
+    .column:last-child {
+        margin-right: 0;
+    }
+
+    .column.colSize1 {
+        width: 176px;
+    }
+
+    .column.colSize4 {
+        width: 752px;
+    }
+
+    .column.colSize5 {
+        width: 944px;
+    }
+
+.logoContainer {
+    text-align: center;
 }
 
-.row .eightcol {
-    width: 65.4%;
+.menuContainer {
+
 }
 
-.last {
-    margin-right: 0px;
+.titleRow {
+    padding-top: 1em;
+}
+
+hgroup {
+    margin-bottom: 1em;
 }
 
 /* Grid styles, mobile */
 
 @media handheld, only screen and (max-width: 800px) {
-
-    .row, .container {
-        min-width: 0;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    
-    .row .twocol, .row .eightcol {
-        width: auto;
-        float: none;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-}
-
-#titleContainer > .row {
-    margin: 0 auto;
-    padding-bottom: 0;
+   
 }
 
 .title {
-    margin: 1em auto;
     padding: 0.5em 0;
 }
 
 /* post styles */
 
-.postContent {
-    margin-top: 1em;
+.post {
     word-wrap: break-word;
 }
-
-    .postContent :first-child {
-        margin-top: 0;
-    }
 
 .sticky {
     background-color: #F9FBFC;
@@ -423,9 +433,9 @@ header {
 
 /* post metadata */
 
-article .metadata, article .postLinks {
-    margin-top: 1em;
+article .metadata {
     font-size: 0.9em;
+    margin-top: -0.4em; /* to compensate text baseline for different front-size in first line */
 }
 
 .metadata div {
@@ -440,16 +450,6 @@ article .metadata, article .postLinks {
 
 .share {
     margin-top: 0.5em;
-}
-
-#logo {
-    text-align: center;
-}
-
-#logo img {
-    margin: 10px;
-    margin-top: 20px;
-    vertical-align: baseline;
 }
 
 footer {
@@ -471,7 +471,7 @@ footer {
     margin-top: 1em;
 }
 
-.comments.title.row {
+.comments.title {
     border-bottom: none;
     margin-bottom: 0;
 }
@@ -486,7 +486,7 @@ article.comment {
     margin-bottom: 0;
 }
 
-    article.comment.row {
+    article.comment {
         padding-top: 1em;
         padding-bottom: 0;
     }
@@ -665,21 +665,16 @@ ul.children { /* TODO: Fix hierarchical comments */
 }
 
 /* Search form and search results */
-header .searchForm {
-    margin-top: 1em;
-    margin-bottom: 1em;
+header .searchForm .searchSubmit,
+header .searchForm label {
+    display: none;
 }
-
-    header .searchForm .searchSubmit,
-    header .searchForm label {
-        display: none;
-    }
 
 article .searchForm label {
     font-weight: bold;
 }
 
-.searchResults.row {
+.searchResults {
     margin-top: 1em;
     margin-bottom: 0;
     background-color: #F9FBFC;
@@ -695,7 +690,7 @@ article .searchForm label {
         margin-bottom: 0;
     }
 
-    .searchResults+.row {
+    .searchResults {
         margin-top: 0;
         padding-top: 0;
     }
@@ -735,9 +730,9 @@ article iframe, article video, article embed {
         display: none;
     }
 
-    #logo { display: none; }
+    .logoContainer { display: none; }
 
-    #titleContainer .twocol.searchForm {
+    .twocol.searchForm {
         padding-top: 0;
         padding-bottom: 1em;
     }
@@ -789,11 +784,11 @@ article iframe, article video, article embed {
     footer,
     nav,
     #commentForm,
-    #logo,
     #dockMenu,
     #dockMenu div.jqDockWrap,
     #dockMenu div.jqDock,
     #dockMenu div.jqDockLabel,
+    .logoContainer,
     .permalink,
     .share,
     .commentCount,
@@ -803,10 +798,6 @@ article iframe, article video, article embed {
 
     .categories:before {
         content: "Categories: ";
-    }
-
-    .title h1 {
-        margin-bottom: 0;
     }
 
     .title h2 {
