@@ -219,7 +219,6 @@ article.columnContainer {
     margin-bottom: 1em;
     padding-bottom: 1em;
     padding-top: 1em;
-    border-bottom: 2px solid #CCC;
 }
 
 article h1 {
@@ -364,6 +363,11 @@ header {
         content: " ";
         clear: both;
     }
+
+    .columnContainer.comments {
+        border-top: 2px solid #CCC;
+    }
+
 
 .column {
     float: left;
