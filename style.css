@@ -221,6 +221,10 @@ article.columnContainer {
     padding-top: 1em;
 }
 
+article {
+    border-bottom: 2px solid #CCC;
+}
+
 article h1 {
     font-family: georgia, 'times new roman', serif;
     font-size: 2em;
@@ -363,11 +367,6 @@ header {
         content: " ";
         clear: both;
     }
-
-    .columnContainer.comments {
-        border-top: 2px solid #CCC;
-    }
-
 
 .column {
     float: left;
