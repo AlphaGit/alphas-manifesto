@@ -82,7 +82,8 @@
     </div>
     <?php
         // in multiple post pages, show navigation only if there is navigation to show
-        if (!is_singular() && !empty(get_posts_nav_link())) {
+        $postsNavLinkResult = get_posts_nav_link();
+        if (!is_singular() && !empty($postsNavLinkResult)) {
     ?>
         <footer class="columnContainer">
             <p><?php posts_nav_link(" &bull; ", "&laquo; Next posts", "Previous posts &raquo;"); ?></p>
