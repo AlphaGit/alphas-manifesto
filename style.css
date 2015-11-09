@@ -257,26 +257,26 @@ h2 {
             margin-top: 0;
         }
 
-article h3 {
+h3 {
     font-variant: small-caps;
     font-size: 1.17em;
     font-weight: bold;
 }
 
-article h4 {
+h4 {
     font-size: 1em;
     font-variant: small-caps;
 }
 
 /* TODO this level needs redesign, is just too small compared with regular text */
-article h5 {
+h5 {
     font-variant: small-caps;
     font-weight: bold;
     font-size: .83em;
 }
 
 /* TODO this level needs redesign, is just too small compared with regular text */
-article h6 {
+h6 {
     font-size: .75em;
 }
 
@@ -428,6 +428,10 @@ hgroup {
     word-wrap: break-word;
 }
 
+.postContent > *:first-child {
+    margin-top: 0; /* start post at top */
+}
+
 .sticky {
     background-color: #F9FBFC;
     border-right: 1em solid #F9FBFC;
@@ -455,10 +459,14 @@ article .metadata {
     margin-top: 0.5em;
 }
 
-footer {
+footer.columnContainer {
     text-align: center;
-    margin-top: 10px;
-	margin-bottom: 45px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 1em;
+	margin-bottom: 1em;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
 }
 
     footer p {
@@ -470,114 +478,102 @@ footer {
 }
 
 /* comment section */
-#reply-title {
+.comment-reply-title {
     margin-top: 1em;
-}
-
-.comments.title {
-    border-bottom: none;
-    margin-bottom: 0;
 }
 
 .commentPagination {
     text-align: center;
 }
 
-article.comment {
-    border-bottom: none;
+.comment {
+    border-bottom: 2px solid #ccc;
     margin-top: 0;
     margin-bottom: 0;
+    padding: 1em 0;
+    list-style-type: none;
 }
 
-    article.comment {
-        padding-top: 1em;
-        padding-bottom: 0;
-    }
-
-    .comment.bypostauthor {
+    .comment.bypostauthor .comment-body {
         background-color: #EEE;
     }
 
-.comment time, .comment .commentDate {
-    font-size: 0.7em;
-    line-height: 1em;
-    display: block;
-}
-
-.commentAuthor {
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    width: 100px;
-}
-
-    .commentAuthor p {
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 1.4em;
-        font-size: 0.9em;
+    .comment time, .comment .commentDate {
+        font-size: 0.7em;
+        line-height: 1em;
+        display: block;
     }
 
-    /* nothing next to the author in a comment box should push up for margins */
-    .commentAuthor + * {
-        margin-top: 0;
+    .comment:last-child {
+        border-bottom: none;
     }
 
-.commentAuthorName {
-    font-weight: bold;
+.comment-body {
+    min-height: 100px;
+    position: relative;
 }
 
-.commentActions {
-    text-align: right;
+    .comment-body p:first-of-type {
+        margin-top: 0.5em;
+    }
+
+.comment-author,
+.comment-awaiting-moderation {
+    font-size: 0.9em;
+    display: inline;
+}
+
+    .comment-author cite {
+        font-weight: bold;
+    }
+
+    .comment-author img {
+        width: 100px;
+        float: left;
+        margin-right: 1em;
+    }
+
+    .comment-author .says {
+        display: none;
+    }
+
+.comment-meta {
+    font-size: 0.8em;
+    margin-right: 0.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.comment .reply {
     font-size: 0.8em;
 }
 
-#commentForm {
+.comment-form {
     padding-top: 0;
     margin-top: 0;
+    clear: both;
 }
 
-    #commentForm h3 {
+    .comment-form h3 {
         font-weight: bold;
         font-variant: small-caps;
         font-size: 1.3em;
         margin-bottom: 1em;
     }
 
-    #commentForm label {
+    .comment-form label {
         font-weight: bold;
         font-size: 1em;
     }
 
-    #commentform input[type=text] {
+    .comment-form input[type=text], 
+    .comment-form textarea {
         width: 100%;
         font: normal 1em/1.5 Georgia, serif;
     }
 
-.commentSeparator {
-    clear: both;
-    margin-bottom: 0;
-    margin-top: 1em;
-}
-
-    .commentSeparator:last-child {
-        display: none;
-    }
-
-#comment {
-    width: 100%;
-    font: normal 1em/1.5 Georgia, serif;
-}
-
-p.commentFormComment {
-    margin-bottom: 0;
-}
-
-.form-submit {
-    margin-top: 0;
-}
-
-#commentSubmit {
+.form-submit input[type=submit] {
     margin-top: 0;
     width: 100%;
     height: 50px;
@@ -592,29 +588,7 @@ p.commentFormComment {
 }
 
 ul.children { /* TODO: Fix hierarchical comments */
-    padding: 0;
-    margin: 0;
-}
-
-.comment.depth-1 .commentContentContainer {
-    padding-left: 0;
-}
-.comment.depth-2 .commentContentContainer {
-    padding-left: 50px;
-}
-.comment.depth-3 .commentContentContainer {
-    padding-left: 100px;
-}
-.comment.depth-4 .commentContentContainer {
-    padding-left: 150px;
-}
-.comment.depth-5 .commentContentContainer,
-.comment.depth-6 .commentContentContainer,
-.comment.depth-7 .commentContentContainer,
-.comment.depth-8 .commentContentContainer,
-.comment.depth-9 .commentContentContainer,
-.comment.depth-10 .commentContentContainer { /* If you need more levels, you probably should not be using the comments section anyway. */
-    padding-left: 200px;
+    padding-left: 4em;
 }
 
 .alignright {
@@ -665,6 +639,15 @@ ul.children { /* TODO: Fix hierarchical comments */
     /* using important rules because wordpress writes inline styles for galleries and while
     they can be deactivated, that will remove ALL styles that wordpress uses for them*/
     margin-bottom: 1em !important;
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Search form and search results */

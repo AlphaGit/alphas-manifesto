@@ -6,7 +6,7 @@
             <h2>Comments</h2>
 
             <?php if(have_comments()) {
-                wp_list_comments( array( 'callback' => 'alphasmanifesto_comment' ) );
+                wp_list_comments();
                 paginate_comments_links();
             } else {
                 ?> <p>(There are currently no comments for this post.)</p> <?php
