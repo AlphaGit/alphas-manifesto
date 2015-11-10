@@ -3,7 +3,10 @@
         $content_width = 745;
     }
 
-    add_theme_support( 'automatic-feed-links' );
+    add_theme_support('automatic-feed-links');
+    
+    add_theme_support('post-thumbnails');
+    add_image_size('full-size', $content_width, 9999);
 
     /********************************************************************/
     // Custom menu support

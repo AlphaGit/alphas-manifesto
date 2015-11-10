@@ -29,9 +29,12 @@
                                     </hgroup>
                                 <?php
                             }
-                        ?>
+                        
+                        if (has_post_thumbnail()) {
+                            ?> <p class="aligncenter"> <?php the_post_thumbnail(); ?> </p> <?php
+                        }
 
-                        <?php the_content('(Read more &rarr;)'); ?>
+                        the_content('(Read more &rarr;)'); ?>
                     </div>
                     <div class="postLinks metadata column colSize1">
                         <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime">
