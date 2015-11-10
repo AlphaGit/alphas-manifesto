@@ -4,14 +4,23 @@
     }
 
     add_theme_support('automatic-feed-links');
-    
+
     add_theme_support('post-thumbnails');
     add_image_size('full-size', $content_width, 9999);
 
     /********************************************************************/
     // Custom menu support
 
-    require_once 'custom_menu.php';
+    add_theme_support( 'nav-menus' );
+
+    //http://codex.wordpress.org/Navigation_Menus
+    if (!function_exists("alphasmanifesto_register_menus")) {
+        function alphasmanifesto_register_menus() {
+            register_nav_menus(array('left-sidebar' => "Left Sidebar"));
+        }
+    }
+
+    add_action('init', 'alphasmanifesto_register_menus');
 
     /********************************************************************/
     // Custom theme options

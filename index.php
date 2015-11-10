@@ -5,7 +5,11 @@
 ?>
     <div class="columnContainer">
         <div class="column colSize1">
-            //TODO: A menu may go here
+            <?php wp_nav_menu(array(
+                'theme_location' => 'left-sidebar',
+                'container' => 'nav',
+                'container_class' => 'leftMenu'
+            )); ?>
         </div>
         <div class="column colSize5">
             <?php while(have_posts()) : the_post(); ?>

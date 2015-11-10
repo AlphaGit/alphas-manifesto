@@ -218,7 +218,6 @@ p, address, ul, ol, #post div {
 article.columnContainer {
     margin-bottom: 1em;
     padding-bottom: 1em;
-    padding-top: 1em;
 }
 
 article {
@@ -404,9 +403,14 @@ header {
     text-align: center;
 }
 
-.menuContainer {
-
+.leftMenu {
+    padding-top: 1em;
+    font-size: 0.9em;
 }
+
+    .leftMenu ul {
+        list-style-type: none;
+    }
 
 .titleRow {
     padding-top: 1em;
