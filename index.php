@@ -5,7 +5,7 @@
 ?>
     <div class="columnContainer">
         <div class="column colSize1">
-            A menu may go here
+            //TODO: A menu may go here
         </div>
         <div class="column colSize5">
             <?php while(have_posts()) : the_post(); ?>

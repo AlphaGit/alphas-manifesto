@@ -9,11 +9,11 @@
                 wp_list_comments();
                 paginate_comments_links();
             } else {
-                ?> <p>(There are currently no comments for this post.)</p> <?php
+                ?> <p class="comments-no-comments">(There are currently no comments for this post.)</p> <?php
             }
 
             if (!comments_open()) {
-                ?> <p>(Comments are disabled for this post.)</p> <?php
+                ?> <p class="comments-disabled">(Comments are disabled for this post.)</p> <?php
             } else { // comments are open
                 comment_form();
             } ?>

@@ -225,6 +225,10 @@ article {
     border-bottom: 2px solid #CCC;
 }
 
+    article:last-child {
+        border-bottom: none;
+    }
+
 article h1 {
     font-family: georgia, 'times new roman', serif;
     font-size: 2em;
@@ -434,8 +438,6 @@ hgroup {
 
 .sticky {
     background-color: #F9FBFC;
-    border-right: 1em solid #F9FBFC;
-    border-left: 1em solid #F9FBFC;
 }
 
 /* post metadata */
@@ -486,7 +488,8 @@ footer.columnContainer {
     text-align: center;
 }
 
-.comment {
+.comment,
+.pingback {
     border-bottom: 2px solid #ccc;
     margin-top: 0;
     margin-bottom: 0;
@@ -504,7 +507,8 @@ footer.columnContainer {
         display: block;
     }
 
-    .comment:last-child {
+    .comment:last-child,
+    .pingback:last-child {
         border-bottom: none;
     }
 
@@ -584,6 +588,13 @@ footer.columnContainer {
     font-size: 0.8em;
     font-variant: normal;
     font-weight: normal;
+    font-style: italic;
+}
+
+.comments-disabled,
+.comments-no-comments {
+    margin-top: 1em;
+    text-align: center;
     font-style: italic;
 }
 
