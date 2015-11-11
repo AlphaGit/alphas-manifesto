@@ -1,20 +1,27 @@
 <?php
     get_header();
-    $blogUrl = get_bloginfo('url');
     $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
+    $show_author_name = get_option( 'show_author_name' );
 ?>
-<div id="postsContainer" class="container">
-    <article id="" class="row">
-        <div class="metadata twocol"> </div>
-        <div class="eightcol postContent">
-            <h1>Oooops!</h1>
-            <h2 class="subtitle">Nothing over here. Neither over there.</h2>
-            <p>There's nothing over here &ndash; maybe what you were looking for is somewhere else?</p>
-            <p>You can <a href="<?php echo $blogUrl ?>">try visiting the main page</a>
-                or using the following search form:</p>
-            <?php get_search_form(); ?>
-        </div>
-        <div class="twocol last"> </div>
-    </article>
+<div class="columnContainer">
+    <div class="column colSize1">
+        <?php wp_nav_menu(array(
+            'theme_location' => 'left-sidebar',
+            'container' => 'nav',
+            'container_class' => 'leftMenu'
+        )); ?>
+    </div>
+    <div class="column colSize5">
+        <article class="post columnContainer">
+            <div class="postContent column colSize4">
+                <h1>Oooops!</h1>
+                <h2 class="subtitle">Nothing over here. Neither over there.</h2>
+                <p>There's nothing over here &ndash; maybe what you were looking for is somewhere else?</p>
+                <p>You can <a href="<?php echo home_url() ?>">try visiting the main page</a>
+                    or using the following search form:</p>
+                <?php get_search_form(); ?>
+            </div>
+        </article>
+    </div>
 </div>
 <?php get_footer(); ?>
