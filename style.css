@@ -425,6 +425,10 @@ ul.menu {
         padding-left: 0;
     }
 
+        ul.menu ul ul {
+            padding-left: 1em;
+        }
+
     ul.menu li {
         border-top: 2px solid #ccc;
         padding-top: 1em;
