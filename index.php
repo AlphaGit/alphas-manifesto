@@ -12,6 +12,12 @@
         )); ?>
     </div>
     <div class="column colSize5">
+        <?php if(is_search()) { ?>
+            <div class="columnContainer">
+                <p class="column colSize4">These are the search results for <em><?php the_search_query() ?></em>.</p>
+            </div>
+        <?php } ?>
+
         <?php while(have_posts()) : the_post(); ?>
             <article id="post-<?php echo the_ID() ?>" <?php post_class('post columnContainer') ?>>
                 <div class="postContent column colSize4">
@@ -25,11 +31,9 @@
                             ?>
                                 <hgroup>
                                     <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
-                                    <?php if(strlen($the_subtitle) > 0) {
-                                    ?>
+                                    <?php if(strlen($the_subtitle) > 0) { ?>
                                         <h2 class="subtitle"><?php echo $the_subtitle ?></h2>
-                                    <?php
-                                    } ?>
+                                    <?php } ?>
                                 </hgroup>
                             <?php
                         }
@@ -67,14 +71,10 @@
                         'pagelink' => 'Page %'
                     )); ?>
 
-                    <div class="tags"><p><?php
-                        echo get_the_tags()
-                            ? the_tags()
-                            : "(No tags)";
-                    ?></p></div>
+                    <div class="tags"><p><?php echo get_the_tags() ? the_tags() : "(No tags)"; ?></p></div>
 
                     <?php if($show_author_name) { ?>
-                        <div class="author">por <span class="name"><?php the_author() ?></span></div>
+                        <div class="author">by <span class="name"><?php the_author() ?></span></div>
                     <?php } ?>
                     <?php edit_post_link('Edit...', '<div class="edit">', '</div>') ?>
                 </div>
