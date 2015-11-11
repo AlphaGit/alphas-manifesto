@@ -4,6 +4,7 @@
     }
 
     add_theme_support('automatic-feed-links');
+    add_theme_support('title-tag');
 
     add_theme_support('post-thumbnails');
     add_image_size('full-size', $content_width, 9999);
