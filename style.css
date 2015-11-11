@@ -412,6 +412,31 @@ header {
         list-style-type: none;
     }
 
+    .leftMenu li {
+        border-top: 2px solid #ccc;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .leftMenu li:last-child {
+        border-bottom: 2px solid #ccc;
+    }
+
+        .leftMenu li ul li {
+            border: none;
+            padding: 0;
+        }
+
+        .leftMenu li ul li:before {
+            content: "\21B3 ";
+            vertical-align: text-bottom;
+            font-size: 1.5em;
+        }
+
+            .leftMenu li ul li:last-child {
+                border: none;
+            }
+
 .titleRow {
     padding-top: 1em;
 }
