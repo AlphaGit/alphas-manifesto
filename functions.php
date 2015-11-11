@@ -32,4 +32,15 @@
 
     add_action('admin_init', 'alphasmanifesto_admin_init');
     add_action('admin_menu', 'alphasmanifesto_admin_menu');
+
+    /********************************************************************/
+    // Admin editor styles
+
+    if(!function_exists("alphasmanifesto_add_editor_styles")) {
+        function alphasmanifesto_add_editor_styles() {
+            add_editor_style('style.css');
+        }
+    }
+
+    add_action('admin_init', 'alphasmanifesto_add_editor_styles');
 ?>
