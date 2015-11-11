@@ -710,6 +710,9 @@ ul.children { /* TODO: Fix hierarchical comments */
     margin-bottom: 1em !important;
 }
 
+/* TODO find out what this is used for */
+.gallery-caption { }
+
 .size-auto, 
 .size-full,
 .size-large,
