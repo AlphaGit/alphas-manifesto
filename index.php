@@ -4,11 +4,9 @@
 ?>
 <div class="columnContainer">
     <div class="column colSize1">
-        <?php if(is_active_sidebar('left_sidebar')) { ?>
-            <ul>
-                <?php dynamic_sidebar('left_sidebar'); ?>
-            </ul>
-        <?php } ?>
+        <?php if(is_active_sidebar('left_sidebar')) {
+            dynamic_sidebar('left_sidebar');
+        } ?>
     </div>
     <div class="column colSize5">
         <?php if(is_search()) { ?>

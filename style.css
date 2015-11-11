@@ -403,8 +403,19 @@ header {
     text-align: center;
 }
 
+/* Widget: general */
+.widget {
+    padding-top: 1em;
+}
+
+.widgettitle {
+    font-size: 1.2em;
+}
+
+/* Widget: custom menu */
 ul.menu {
     padding-top: 1em;
+    padding-left: 0;
     font-size: 0.9em;
     list-style-type: none;
 }
