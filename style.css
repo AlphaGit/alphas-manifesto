@@ -403,37 +403,38 @@ header {
     text-align: center;
 }
 
-.leftMenu {
+ul.menu {
     padding-top: 1em;
     font-size: 0.9em;
+    list-style-type: none;
 }
 
-    .leftMenu ul {
+    ul.menu ul {
         list-style-type: none;
     }
 
-    .leftMenu li {
+    ul.menu li {
         border-top: 2px solid #ccc;
         padding-top: 1em;
         padding-bottom: 1em;
     }
 
-    .leftMenu li:last-child {
+    ul.menu li:last-child {
         border-bottom: 2px solid #ccc;
     }
 
-        .leftMenu li ul li {
+        ul.menu li ul li {
             border: none;
             padding: 0;
         }
 
-        .leftMenu li ul li:before {
+        ul.menu li ul li:before {
             content: "\21B3 ";
             vertical-align: text-bottom;
             font-size: 1.5em;
         }
 
-            .leftMenu li ul li:last-child {
+            ul.menu li ul li:last-child {
                 border: none;
             }
 

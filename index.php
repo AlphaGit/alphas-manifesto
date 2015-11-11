@@ -6,8 +6,7 @@
     <div class="column colSize1">
         <?php wp_nav_menu(array(
             'theme_location' => 'left-sidebar',
-            'container' => 'nav',
-            'container_class' => 'leftMenu'
+            'container' => 'nav'
         )); ?>
     </div>
     <div class="column colSize5">
