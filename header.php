@@ -2,10 +2,6 @@
     $blogname = get_bloginfo('name', 'Display');
     $postTitle = get_the_title();
 
-    $browserTitle = is_singular()
-        ? $postTitle . " | ". $blogname
-        : $blogname;
-
     $pageTitle = is_singular()
         ? $postTitle
         : $blogname;
@@ -23,7 +19,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><?php echo $browserTitle ?></title>
+    <title><?php bloginfo('name') ?> | <?php is_front_page() ? bloginfo('description') : wp_title('') ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" />
