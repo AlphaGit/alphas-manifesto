@@ -13,7 +13,7 @@
     $blogLink = home_url();
     $currentLink = home_url(add_query_arg(NULL, NULL));
 
-    $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
+    $stylesheetDir = get_stylesheet_directory_uri();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

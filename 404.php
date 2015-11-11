@@ -1,7 +1,5 @@
 <?php
     get_header();
-    $stylesheetDir = get_bloginfo( 'stylesheet_directory' );
-    $show_author_name = get_option( 'show_author_name' );
 ?>
 <div class="columnContainer">
     <div class="column colSize1">
