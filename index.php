@@ -4,10 +4,11 @@
 ?>
 <div class="columnContainer">
     <div class="column colSize1">
-        <?php wp_nav_menu(array(
-            'theme_location' => 'left-sidebar',
-            'container' => 'nav'
-        )); ?>
+        <?php if(is_active_sidebar('left_sidebar')) { ?>
+            <ul>
+                <?php dynamic_sidebar('left_sidebar'); ?>
+            </ul>
+        <?php } ?>
     </div>
     <div class="column colSize5">
         <?php if(is_search()) { ?>

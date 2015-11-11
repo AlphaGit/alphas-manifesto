@@ -12,20 +12,6 @@
     add_theme_support('custom-background', array('default-color' => 'white'));
 
     /********************************************************************/
-    // Custom menu support
-
-    add_theme_support( 'nav-menus' );
-
-    //http://codex.wordpress.org/Navigation_Menus
-    if (!function_exists("alphasmanifesto_register_menus")) {
-        function alphasmanifesto_register_menus() {
-            register_nav_menus(array('left-sidebar' => "Left Sidebar"));
-        }
-    }
-
-    add_action('init', 'alphasmanifesto_register_menus');
-
-    /********************************************************************/
     // Custom theme options
 
     require_once 'theme_options.php';
@@ -43,4 +29,17 @@
     }
 
     add_action('admin_init', 'alphasmanifesto_add_editor_styles');
+
+    /********************************************************************/
+    // Widget support
+
+    if(!function_exists('alphasmanifesto_init_widgets')) {
+        function alphasmanifesto_init_widgets() {
+            register_sidebar( array(
+                'name'          => 'Left sidebar',
+                'id'            => 'left_sidebar'
+            ) );
+        }
+    }
+    add_action('widgets_init', 'alphasmanifesto_init_widgets');
 ?>
