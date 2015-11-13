@@ -464,8 +464,27 @@ hgroup {
 
 /* Grid styles, mobile */
 
-@media handheld, only screen and (max-width: 800px) {
-   
+@media only screen and (max-width: 1140px) {
+    .columnContainer .colSize1:first-child {
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .columnContainer .colSize4 {
+        padding-left: 1em;
+    }
+
+    .titleRow .colSize1 {
+        display: none;
+    }
+
+        .titleRow .colSize1.logoContainer {
+            display: block;
+            width: 130px;
+            margin-right: 0;
+            padding-right: 0;
+        }
 }
 
 .title {
