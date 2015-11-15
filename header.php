@@ -80,7 +80,7 @@
                     <?php } ?>
                 </hgroup>
             </div><!-- This comment is a fix for inline-block spaces, do not remove
-            --><div class="column colSize1">
+            --><div class="column colSize1 searchContainer">
                 <?php get_search_form() ?>
             </div>
         </div>

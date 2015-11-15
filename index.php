@@ -3,12 +3,12 @@
     $show_author_name = get_option( 'show_author_name' );
 ?>
 <div class="columnContainer">
-    <div class="column colSize1">
+    <div class="column colSize1 leftSidebar">
         <?php if(is_active_sidebar('left_sidebar')) {
             dynamic_sidebar('left_sidebar');
         } ?>
     </div><!-- This comment is a fix for inline-block spaces, do not remove
-    --><div class="column colSize5">
+    --><div class="column colSize5 postContainer">
         <?php if(is_search()) { ?>
             <div class="columnContainer">
                 <p class="column colSize4">These are the search results for <em><?php the_search_query() ?></em>.</p>
@@ -41,7 +41,7 @@
 
                     the_content('(Read more &rarr;)'); ?>
                 </div><!-- This comment is a fix for inline-block spaces, do not remove
-                --><div class="postLinks metadata column colSize1">
+                --><div class="metadata column colSize1">
                     <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime">
                         <span class="date"><?php the_time(get_option('date_format')); ?></span>
                         <span class="time"><?php the_time() ?></span>

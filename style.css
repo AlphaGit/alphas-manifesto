@@ -423,29 +423,8 @@ hgroup {
     margin-bottom: 1em;
 }
 
-/* Grid styles, mobile */
-
-@media only screen and (max-width: 1140px) {
-    .columnContainer .colSize1:first-child {
-        width: 100%;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    .columnContainer .colSize4 {
-        padding-left: 1em;
-    }
-
-    .titleRow .colSize1 {
-        display: none;
-    }
-
-        .titleRow .colSize1.logoContainer {
-            display: block;
-            width: 130px;
-            margin-right: 0;
-            padding-right: 0;
-        }
+.leftSidebar {
+    padding-right: 1em;
 }
 
 .title {
@@ -783,17 +762,20 @@ article iframe, article video, article embed {
     border: none;
 }
 
-@media screen and (max-width: 800px) {
-    .logoContainer { display: none; }
+/* Grid styles, mobile */
+/* everything above this: 6 columns (1140px and above) */
 
-    .twocol.searchForm {
-        padding-top: 0;
-        padding-bottom: 1em;
-    }
-
-    header .searchForm label {
-        color: #DDD;
-        display: inline;
+/* 5 columns (1139px and below) */
+@media only screen and (max-width: 1139px) {
+    /* collapse metadata column under post */
+    .column.metadata {
+        display: block;
+        width: 100%;
+        max-width: 760px; /* max size of colSize4 */
+        border-top: 2px solid #CCC;
+        padding-top: 1em;
+        margin-right: 20px;
+        margin-left: 20px;
     }
 
     .metadata div {
@@ -801,6 +783,7 @@ article iframe, article video, article embed {
         display: inline;
     }
 
+    /* display metadata content inline */
     .permalink,
     .datetime,
     .date,
@@ -814,17 +797,60 @@ article iframe, article video, article embed {
             content: " ―";
         }
 
-    .last.postLinks {
-        border-top: 2px solid #CCC;
-        padding-top: 1em;
-        margin-right: 20px;
-        margin-left: 20px;
+    /* make post content and metadata be aligned at the right of the left sidebar */
+    .column.postContainer {
+        max-width: 760px; /* max size of colSize4 */
+    }
+
+    /* dismiss search */
+    .searchContainer {
+        display: none;
+    }
+
+    /* adjust size of columns to next breakpoint */
+    .columnContainer {
+        max-width: 950px;
+    }
+}
+
+/* 4 columns (949px and below) */
+@media only screen and (max-width: 949px) {
+    /* collapse sidebar on top of postContainer column */
+    .titleRow,
+    .leftSidebar,
+    .postContainer {
+        display: block;
+        margin: 0 auto;
+        max-width: 760px;
+    }
+    
+    .titleRow .colSize4 {
+        margin: 0 auto;
+        max-width: 760px;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+/*@media only screen and (max-width: 800px) {
+    .column.searchContainer {
+        display: none;
+    }
+
+    .logoContainer {
+        display: none; 
+    }
+
+    .columnContainer .colSize1 {
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     footer {
         margin-bottom: 0;
     }
-}
+}*/
 
 @media print {
     a {
