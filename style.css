@@ -335,68 +335,29 @@ header {
 
 /* Grid styles */
 
-/*
-    We'll assume 12 columns maxed at 1140px.
-    We'll have 16px separators (1em), so we'll use 80px columns and 2px margin left and right.
-    176px x 6 columns   = 1056px
-    16px x 5 separators = 80px
-    2px  x 2  margins   = 4px
-                          ------
-                          1140px
-
-    Header:
-        Our columns will be distributed in 1-4-1 form, so widths for each of them will be:
-        1st column: 176px
-        2nd column: 176px * 4 + 16px * 3 = 704px + 48px = 752px
-        3rd column: 176px
-
-    Body:
-        Menu/Posts: Distributed 1-5
-        Inside posts: posts/metadata: 4-1
-
-        
-*/
-
 .columnContainer {
     max-width: 1140px;
     margin: 0 auto;
     overflow: hidden;
     padding-top: 1em;
-    padding-left: 2px;
-    padding-right: 2px;
 }
-
-    .columnContainer:after {
-        content: " ";
-        clear: both;
-    }
 
 .column {
-    float: left;
-    margin-right: 16px;
+    display: inline-block;
     min-height: 1px;
+    vertical-align: top;
 }
 
-    .column .columnContainer {
-        /* do not accumulate padding if columns are nested */
-        padding-left: 0; 
-        padding-right: 0;
-    }
-
-    .column:last-child {
-        margin-right: 0;
-    }
-
     .column.colSize1 {
-        width: 176px;
+        width: 190px;
     }
 
     .column.colSize4 {
-        width: 752px;
+        width: 760px;
     }
 
     .column.colSize5 {
-        width: 944px;
+        width: 950px;
     }
 
 .logoContainer {
@@ -497,9 +458,13 @@ hgroup {
     word-wrap: break-word;
 }
 
-.postContent > *:first-child {
-    margin-top: 0; /* start post at top */
+.postContent {
+    padding-right: 1em;
 }
+
+    .postContent > *:first-child {
+        margin-top: 0; /* start post at top */
+    }
 
 .sticky {
     background-color: #F9FBFC;
@@ -819,11 +784,6 @@ article iframe, article video, article embed {
 }
 
 @media screen and (max-width: 800px) {
-    /* hide dock menu */
-    #dockMenu, .jqDockWrap {
-        display: none;
-    }
-
     .logoContainer { display: none; }
 
     .twocol.searchForm {

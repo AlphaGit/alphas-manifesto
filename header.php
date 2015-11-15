@@ -67,8 +67,8 @@
         <div class="columnContainer titleRow">
             <div class="column colSize1 logoContainer">
                 <a href="<?php echo $blogLink ?>"><img src="<?php echo "$stylesheetDir/logo.png" ?>" alt="logo" /></a>
-            </div>
-            <div class="column colSize4">
+            </div><!-- This comment is a fix for inline-block spaces, do not remove
+            --><div class="column colSize4">
                 <hgroup class="title">
                     <h1>
                         <a href="<?php echo esc_url($currentLink) ?>">
@@ -79,8 +79,8 @@
                         <h2><?php echo $pageSubtitle ?></h2>
                     <?php } ?>
                 </hgroup>
-            </div>
-            <div class="column colSize1">
+            </div><!-- This comment is a fix for inline-block spaces, do not remove
+            --><div class="column colSize1">
                 <?php get_search_form() ?>
             </div>
         </div>
