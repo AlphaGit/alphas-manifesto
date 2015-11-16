@@ -766,16 +766,17 @@ article iframe, article video, article embed {
 /* everything above this: 6 columns (1140px and above) */
 
 /* 5 columns (1139px and below) */
-@media only screen and (max-width: 1139px) {
+@media only screen and (max-width: 1159px) { /* 1140px + 20px scrollbars */
     /* collapse metadata column under post */
     .column.metadata {
         display: block;
-        width: 100%;
+        width: auto;
         max-width: 760px; /* max size of colSize4 */
         border-top: 2px solid #CCC;
         padding-top: 1em;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-right: 2em;
+        margin-left: 2em;
+        margin-top: 1em;
     }
 
     .metadata div {
@@ -814,7 +815,7 @@ article iframe, article video, article embed {
 }
 
 /* 4 columns (949px and below) */
-@media only screen and (max-width: 949px) {
+@media only screen and (max-width: 969px) { /* 950px + 20px scrollbars */
     /* collapse sidebar on top of postContainer column */
     .titleRow,
     .leftSidebar,
@@ -824,33 +825,47 @@ article iframe, article video, article embed {
         max-width: 760px;
     }
     
-    .titleRow .colSize4 {
-        margin: 0 auto;
+    /* make all columns the same size */
+    .columnContainer {
         max-width: 760px;
-        padding-left: 1em;
-        padding-right: 1em;
+    }
+
+    .column.colSize1,
+    .column.colSize4,
+    .column.colSize5 {
+        margin: 0 auto;
+        width: 760px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* add a border between the sidebar and the posts */
+    .leftSidebar {
+        padding-bottom: 1em;
+        border-bottom: 2px solid #ccc;
     }
 }
 
-/*@media only screen and (max-width: 800px) {
-    .column.searchContainer {
-        display: none;
+@media only screen and (max-width: 779px) { /* 760px + 20px scrollbars */
+    /* make columns fluid and hope for the best */
+    .columnContainer,
+    .column.colSize1,
+    .column.colSize4,
+    .column.colSize5 {
+        max-width: 100%;
+        width: auto;
     }
 
-    .logoContainer {
-        display: none; 
+    .columnContainer {
+        margin-left: 1em;
+        margin-right: 1em;
     }
 
-    .columnContainer .colSize1 {
-        width: 100%;
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-
-    footer {
-        margin-bottom: 0;
-    }
-}*/
+        .columnContainer .columnContainer {
+            margin-left: 0;
+            margin-right: 0;
+        }
+}
 
 @media print {
     a {
