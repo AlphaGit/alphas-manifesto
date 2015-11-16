@@ -392,6 +392,7 @@ header {
         list-style-type: none;
         padding-top: 0;
         padding-left: 0;
+        font-size: 1em;
     }
 
         .widget ul ul ul {
