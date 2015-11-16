@@ -367,53 +367,67 @@ header {
 /* Widget: general */
 .widget {
     padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #ccc;
 }
+
+    .widget:last-child {
+        border-bottom: none;
+    }
 
 .widgettitle {
     font-size: 1.2em;
 }
 
 /* Widget: custom menu */
-ul.menu {
+.widget ul {
     padding-top: 1em;
     padding-left: 0;
     font-size: 0.9em;
     list-style-type: none;
+    margin-bottom: 0;
 }
 
-    ul.menu ul {
+    .widget ul ul {
         list-style-type: none;
+        padding-top: 0;
         padding-left: 0;
     }
 
-        ul.menu ul ul {
+        .widget ul ul ul {
             padding-left: 1em;
         }
 
-    ul.menu li {
+    .widget ul li {
         border-top: 2px solid #ccc;
         padding-top: 1em;
         padding-bottom: 1em;
     }
 
-    ul.menu li:last-child {
-        border-bottom: 2px solid #ccc;
-    }
+        .widget ul li:last-child {
+            padding-bottom: 0;
+        }
 
-        ul.menu li ul li {
+        .widget ul li ul li {
             border: none;
             padding: 0;
         }
 
-        ul.menu li ul li:before {
-            content: "\21B3 ";
-            vertical-align: text-bottom;
-            font-size: 1.5em;
-        }
+            .widget ul li ul li:before {
+                content: "\21B3 ";
+                vertical-align: text-bottom;
+                font-size: 1.5em;
+            }
 
-            ul.menu li ul li:last-child {
+            .widget ul li ul li:last-child {
                 border: none;
             }
+
+.widget th,
+.widget td {
+    padding: 0;
+    text-align: center;
+}
 
 .titleRow {
     padding-top: 1em;
@@ -885,10 +899,6 @@ article iframe, article video, article embed {
     footer,
     nav,
     #commentForm,
-    #dockMenu,
-    #dockMenu div.jqDockWrap,
-    #dockMenu div.jqDock,
-    #dockMenu div.jqDockLabel,
     .logoContainer,
     .permalink,
     .share,
