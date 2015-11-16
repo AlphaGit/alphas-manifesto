@@ -25,14 +25,19 @@
                             $the_title = get_the_title();
                             $the_subtitle = get_post_meta(get_the_ID(), 'subtitle', true);
 
-                            ?>
+                            $hasTitle = strlen($the_title) > 0);
+                            $hasSubtitle = strlen($the_subtitle) > 0;
+
+                            if($hasTitle || $hasSubtitle) { ?>
                                 <hgroup>
-                                    <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
-                                    <?php if(strlen($the_subtitle) > 0) { ?>
+                                    <?php if($hasTitle) { ?>
+                                        <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
+                                    <?php } ?>
+                                    <?php if($hasSubtitle) { ?>
                                         <h2 class="subtitle"><?php echo $the_subtitle ?></h2>
                                     <?php } ?>
                                 </hgroup>
-                            <?php
+                            <?php }
                         }
                     
                     if (has_post_thumbnail()) {
