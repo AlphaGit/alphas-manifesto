@@ -25,7 +25,7 @@
                             $the_title = get_the_title();
                             $the_subtitle = get_post_meta(get_the_ID(), 'subtitle', true);
 
-                            $hasTitle = strlen($the_title) > 0);
+                            $hasTitle = strlen($the_title) > 0;
                             $hasSubtitle = strlen($the_subtitle) > 0;
 
                             if($hasTitle || $hasSubtitle) { ?>
