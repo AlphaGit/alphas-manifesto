@@ -839,6 +839,12 @@ article iframe, article video, article embed {
         padding-right: 0;
     }
 
+        .column.colSize1.metadata {
+            width: auto;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
     /* add a border between the sidebar and the posts */
     .leftSidebar {
         padding-bottom: 1em;
