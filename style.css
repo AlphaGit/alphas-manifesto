@@ -484,6 +484,11 @@ article .metadata {
     margin-top: 1em;
     padding-top: 1em;
 }
+    .metadata :first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
 
     .metatada div:last {
         border: none;
