@@ -50,7 +50,7 @@
                     the_content('(Read more &rarr;)'); ?>
                 </div><!-- This comment is a fix for inline-block spaces, do not remove
                 --><div class="metadata column colSize1">
-                    <time pubdate date="<?php the_time("Y-m-d") ?>" class="datetime">
+                    <time datetime="<?php the_time(DateTime::ISO8601) ?>" class="datetime dt-published">
                         <span class="date"><?php the_time(get_option('date_format')); ?></span>
                         <span class="time"><?php the_time() ?></span>
                     </time>
