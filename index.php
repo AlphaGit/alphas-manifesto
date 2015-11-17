@@ -50,11 +50,13 @@
                     the_content('(Read more &rarr;)'); ?>
                 </div><!-- This comment is a fix for inline-block spaces, do not remove
                 --><div class="metadata column colSize1">
-                    <time datetime="<?php the_time(DateTime::ISO8601) ?>" class="datetime dt-published">
-                        <span class="date"><?php the_time(get_option('date_format')); ?></span>
-                        <span class="time"><?php the_time() ?></span>
-                    </time>
-                    <div class="categories"><?php the_category(', ') ?></div>
+                    <?php if(!is_page()) { ?>
+                        <time datetime="<?php the_time(DateTime::ISO8601) ?>" class="datetime dt-published">
+                            <span class="date"><?php the_time(get_option('date_format')); ?></span>
+                            <span class="time"><?php the_time() ?></span>
+                        </time>
+                        <div class="categories"><?php the_category(', ') ?></div>
+                    <?php } ?>
 
                     <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
                     <?php
@@ -76,11 +78,14 @@
                         'pagelink' => 'Page %'
                     )); ?>
 
-                    <div class="tags"><p><?php echo get_the_tags() ? the_tags() : "(No tags)"; ?></p></div>
+                    <?php if(!is_page()) { ?>
+                        <div class="tags"><p><?php echo get_the_tags() ? the_tags() : "(No tags)"; ?></p></div>
+                    <?php } ?>
 
-                    <?php if($show_author_name) { ?>
+                    <?php if($show_author_name && !is_page()) { ?>
                         <div class="author">by <span class="name"><?php the_author() ?></span></div>
                     <?php } ?>
+
                     <?php edit_post_link('Edit...', '<div class="edit">', '</div>') ?>
                 </div>
             </article>
