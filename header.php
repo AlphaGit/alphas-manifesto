@@ -18,18 +18,18 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php
-    if (!function_exists("alphasmanifesto_enqueue_scripts")) {
+    if (!function_exists('alphasmanifesto_enqueue_scripts')) {
         function alphasmanifesto_enqueue_scripts() {
-            wp_enqueue_script("jquery");
-            if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-                wp_enqueue_script( 'comment-reply' );
+            wp_enqueue_script('jquery');
+            if (is_singular() && comments_open() && get_option('thread_comments')) {
+                wp_enqueue_script('comment-reply');
             }
         }
     }
