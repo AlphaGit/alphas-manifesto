@@ -123,9 +123,10 @@
                     next_post_link(); ?>
                 </p>
             </footer>
-    <?php 
-        }
-    }
-get_footer();
+    <?php } // $nextPost || $previousPost
+    } // is_singular
 
+    wp_footer(); 
 ?>
+</body>
+</html>
