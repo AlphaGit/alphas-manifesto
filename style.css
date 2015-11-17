@@ -228,23 +228,27 @@ article {
         border-bottom: none;
     }
 
-article h1 {
-    font-family: georgia, 'times new roman', serif;
-    font-size: 2em;
-}
-
-    article h1 + h2 {
-        margin-top: 0.5em;
-    }
-
-    article p.subtitle {
+    article h1 {
         font-family: georgia, 'times new roman', serif;
-        font-size: 1em;
-        font-style: italic;
-        font-variant: normal;
-        font-weight: normal;
-        margin-top: 0;
+        font-size: 2em;
     }
+
+        article h1 + h2 {
+            margin-top: 0.5em;
+        }
+
+        article p {
+            margin-top: 1em;
+        }
+
+            article p.subtitle {
+                font-family: georgia, 'times new roman', serif;
+                font-size: 1em;
+                font-style: italic;
+                font-variant: normal;
+                font-weight: normal;
+                margin-top: 0;
+            }
 
 h2 {
     font-size: 1.5em; /* TODO maybe this rule can be deleted */
@@ -487,6 +491,10 @@ article .metadata {
 
 .share {
     margin-top: 0.5em;
+}
+
+.tags p {
+    margin-top: 0;
 }
 
 footer.columnContainer {
