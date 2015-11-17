@@ -785,7 +785,7 @@ article iframe, article video, article embed {
 /* everything above this: 6 columns (1140px and above) */
 
 /* 5 columns (1139px and below) */
-@media only screen and (max-width: 1159px) { /* 1140px + 20px scrollbars */
+@media print, only screen and (max-width: 1159px) { /* 1140px + 20px scrollbars */
     /* collapse metadata column under post */
     .column.metadata {
         display: block;
@@ -834,7 +834,7 @@ article iframe, article video, article embed {
 }
 
 /* 4 columns (949px and below) */
-@media only screen and (max-width: 969px) { /* 950px + 20px scrollbars */
+@media print, only screen and (max-width: 969px) { /* 950px + 20px scrollbars */
     /* collapse sidebar on top of postContainer column */
     .titleRow,
     .leftSidebar,
@@ -915,57 +915,11 @@ article iframe, article video, article embed {
 }
 
 @media print {
-    a {
-        color: black;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    input,
-    textarea,
-    footer,
-    nav,
-    #commentForm,
-    .logoContainer,
-    .permalink,
-    .share,
-    .commentCount,
-    .post-edit-link {
+    /* hide stuff that's no use when printed or that takes too much space */
+    label.menuSwitcher,
+    .logoContainer {
         display: none;
     }
 
-    .categories:before {
-        content: "Categories: ";
-    }
-
-    .title h2 {
-        margin-top: 0;
-        font-style: italic;
-        font-size: 1.2em;
-        font-weight: normal;
-    }
-
-    .tags {
-        border-top: 1px solid black;
-    }
-
-    p, blockquote {
-        widows: 200;
-    }
-
-    @page { margin: 0.5cm; }
-
-    .date, .time { display:  inline; }
-
-    .metadata {
-        border-bottom: 1px solid black;
-    }
-
-    article {
-        page-break-after: always;
-    }
-
-    article:last-child {
-        page-break-after: avoid;
-    }
+    /* TODO needs work */
 }
