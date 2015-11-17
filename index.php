@@ -14,7 +14,7 @@
     --><div class="column colSize5 postContainer">
         <?php if(is_search()) { ?>
             <div class="columnContainer">
-                <p class="column colSize4">These are the search results for <em><?php the_search_query() ?></em>.</p>
+                <p class="column colSize5 searchHeader">These are the search results for <em><?php the_search_query() ?></em>.</p>
             </div>
         <?php } ?>
 

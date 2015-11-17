@@ -744,26 +744,10 @@ article .searchForm label {
     font-weight: bold;
 }
 
-.searchResults {
-    margin-top: 1em;
-    margin-bottom: 0;
-    background-color: #F9FBFC;
-    border-top: 2px solid #DDD;
-    border-right: 2px solid #CCC;
-    border-left: 2px solid #CCC;
-    border-bottom: 2px solid #BBB;
-    border-radius: 10px;
-    padding-top: 1em;
+.searchHeader {
+    background-color: #eee;
+    padding: 1em;
 }
-
-    .searchResults p {
-        margin-bottom: 0;
-    }
-
-    .searchResults {
-        margin-top: 0;
-        padding-top: 0;
-    }
 
 /* Fixes for general embeds */
 article iframe, article video, article embed {
