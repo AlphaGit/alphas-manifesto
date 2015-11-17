@@ -7,7 +7,9 @@
 
             <?php if(have_comments()) {
                 wp_list_comments();
-                paginate_comments_links();
+                ?> <div class="commentPagination"> <?php
+                    paginate_comments_links();
+                ?> </div> <?php
             } else {
                 ?> <p class="comments-no-comments">(There are currently no comments for this post.)</p> <?php
             }
