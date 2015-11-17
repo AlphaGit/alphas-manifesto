@@ -19,7 +19,6 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><?php bloginfo('name') ?> | <?php is_front_page() ? bloginfo('description') : wp_title('') ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" />
@@ -68,17 +67,15 @@
             <div class="column colSize1 logoContainer">
                 <a href="<?php echo $blogLink ?>"><img src="<?php echo "$stylesheetDir/logo.png" ?>" alt="logo" /></a>
             </div><!-- This comment is a fix for inline-block spaces, do not remove
-            --><div class="column colSize4">
-                <hgroup class="title">
-                    <h1>
-                        <a href="<?php echo esc_url($currentLink) ?>">
-                        <?php echo $pageTitle; ?>
-                        </a>
-                    </h1>
-                    <?php if(strlen($pageSubtitle) > 0) { ?>
-                        <h2><?php echo $pageSubtitle ?></h2>
-                    <?php } ?>
-                </hgroup>
+            --><div class="column colSize4 title">
+                <h1>
+                    <a href="<?php echo esc_url($currentLink) ?>">
+                    <?php echo $pageTitle; ?>
+                    </a>
+                </h1>
+                <?php if(strlen($pageSubtitle) > 0) { ?>
+                    <p class="subtitle"><?php echo $pageSubtitle ?></p>
+                <?php } ?>
             </div><!-- This comment is a fix for inline-block spaces, do not remove
             --><div class="column colSize1 searchContainer">
                 <?php get_search_form() ?>

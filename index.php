@@ -32,14 +32,14 @@
                             $hasSubtitle = strlen($the_subtitle) > 0;
 
                             if($hasTitle || $hasSubtitle) { ?>
-                                <hgroup>
-                                    <?php if($hasTitle) { ?>
-                                        <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
-                                    <?php } ?>
-                                    <?php if($hasSubtitle) { ?>
-                                        <h2 class="subtitle"><?php echo $the_subtitle ?></h2>
-                                    <?php } ?>
-                                </hgroup>
+                                
+                                <?php if($hasTitle) { ?>
+                                    <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
+                                <?php } ?>
+                                <?php if($hasSubtitle) { ?>
+                                    <p class="subtitle"><?php echo $the_subtitle ?></p>
+                                <?php } ?>
+                                
                             <?php }
                         }
                     
