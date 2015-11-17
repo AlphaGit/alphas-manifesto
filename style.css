@@ -903,6 +903,11 @@ article iframe, article video, article embed {
         display: block;
     }
 
+        /* we still don't want the search box */
+        .column.colSize1.searchContainer {
+            display: none;
+        }
+
     .columnContainer {
         margin-left: 1em;
         margin-right: 1em;
