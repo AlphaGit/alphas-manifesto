@@ -5,7 +5,10 @@
 <div class="columnContainer">
     <div class="column colSize1 leftSidebar">
         <?php if(is_active_sidebar('left_sidebar')) {
-            dynamic_sidebar('left_sidebar');
+        ?>
+            <input type="checkbox" id="displayMenus" class="menuSwitcher" />
+            <label for="displayMenus" class="menuSwitcher"></label>
+            <?php dynamic_sidebar('left_sidebar');
         } ?>
     </div><!-- This comment is a fix for inline-block spaces, do not remove
     --><div class="column colSize5 postContainer">

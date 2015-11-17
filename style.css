@@ -442,6 +442,10 @@ hgroup {
     padding-right: 1em;
 }
 
+.menuSwitcher {
+    display: none;
+}
+
 .title {
     padding: 0.5em 0;
 }
@@ -865,6 +869,28 @@ article iframe, article video, article embed {
         padding-bottom: 1em;
         border-bottom: 2px solid #ccc;
     }
+
+    /* collapse menu and show option to display it */
+    label.menuSwitcher {
+        display: block;
+        font-size: 1.2em;
+    }
+
+        label.menuSwitcher:before {
+            content: "\25B6  Display menus";
+        }
+
+        .widget {
+            display: none;
+        }
+
+    #displayMenus:checked + label.menuSwitcher:before {
+        content: "\25BC  Hide menus";
+    }
+
+        #displayMenus:checked ~ .widget {
+            display: block;
+        }
 }
 
 @media only screen and (max-width: 779px) { /* 760px + 20px scrollbars */
