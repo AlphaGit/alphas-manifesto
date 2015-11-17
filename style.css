@@ -668,6 +668,10 @@ ul.children { /* TODO: Fix hierarchical comments */
     max-width: 100%;
 }
 
+    h1 + .wp-caption {
+        margin-top: 1em;
+    }
+
     .wp-caption.aligncenter {
         margin-right: auto;
         margin-left: auto;
