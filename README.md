@@ -13,3 +13,9 @@ Libraries used in this theme:
 
 * [jquery](http://jquery.com/)
 * [Eric Meyer's Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
+
+## Demo
+
+You can view a demo (with the unit test data) for this theme at [http://blog-qa.alphasmanifesto.com/](http://blog-qa.alphasmanifesto.com/)
+
+You can also view a full featured demo at my actual blog: [http://blog.alphasmanifesto.com](http://blog.alphasmanifesto.com)
