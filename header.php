@@ -65,7 +65,7 @@
     <header>
         <div class="columnContainer titleRow">
             <div class="column colSize1 logoContainer">
-                <a href="<?php echo $blogLink ?>"><img src="<?php echo "$stylesheetDir/logo.png" ?>" alt="logo" /></a>
+                <?php if ( function_exists( 'jetpack_the_site_logo' ) ) jetpack_the_site_logo(); ?>
             </div><!-- This comment is a fix for inline-block spaces, do not remove
             --><div class="column colSize4 title">
                 <h1>
