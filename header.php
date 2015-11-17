@@ -69,9 +69,9 @@
             </div><!-- This comment is a fix for inline-block spaces, do not remove
             --><div class="column colSize4 title">
                 <h1>
-                    <a href="<?php echo esc_url($currentLink) ?>">
+                    <?php if(!is_single()) { ?> <a href="<?php echo esc_url($currentLink) ?>"> <?php } ?>
                     <?php echo $pageTitle; ?>
-                    </a>
+                    <?php if(!is_single()) { ?> </a> <?php } ?>
                 </h1>
                 <?php if(strlen($pageSubtitle) > 0) { ?>
                     <p class="subtitle"><?php echo $pageSubtitle ?></p>

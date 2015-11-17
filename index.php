@@ -34,7 +34,11 @@
                             if($hasTitle || $hasSubtitle) { ?>
                                 
                                 <?php if($hasTitle) { ?>
-                                    <h1><a href="<?php the_permalink() ?>"><?php echo $the_title ?></a></h1>
+                                    <h1>
+                                        <a href="<?php the_permalink() ?>">
+                                            <?php echo $the_title ?>
+                                        </a>
+                                    </h1>
                                 <?php } ?>
                                 <?php if($hasSubtitle) { ?>
                                     <p class="subtitle"><?php echo $the_subtitle ?></p>
