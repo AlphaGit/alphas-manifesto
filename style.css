@@ -202,7 +202,7 @@ sup {
     position: relative;
 }
 
-p, address, ul, ol, #post div {
+p, address, ul, ol, #post div, dl {
     margin-bottom: 1em;
 }
 
