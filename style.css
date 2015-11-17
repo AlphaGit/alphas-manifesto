@@ -900,6 +900,7 @@ article iframe, article video, article embed {
     .column.colSize5 {
         max-width: 100%;
         width: auto;
+        display: block;
     }
 
     .columnContainer {
