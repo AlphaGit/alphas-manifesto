@@ -528,6 +528,10 @@ footer.columnContainer {
     margin-top: 1em;
 }
 
+.commentList {
+    padding-left: 0;
+}
+
 .commentPagination {
     text-align: center;
     padding-top: 1em;
@@ -556,6 +560,11 @@ footer.columnContainer {
     .pingback:last-child {
         border-bottom: none;
     }
+
+        .commentList > .comment:last-child,
+        .commentList > .pingback:last-child {
+            border-bottom: 2px solid #ccc;
+        }
 
 .comment-body {
     min-height: 100px;
