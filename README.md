@@ -13,6 +13,7 @@ Libraries used in this theme:
 
 * [jquery](http://jquery.com/)
 * [Eric Meyer's Reset CSS](http://meyerweb.com/eric/tools/css/reset/)
+* [html5shiv](https://github.com/afarkas/html5shiv)
 
 ## Demo
 
