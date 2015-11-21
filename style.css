@@ -254,7 +254,7 @@ article {
             }
 
 h2 {
-    font-size: 1.5em; /* TODO maybe this rule can be deleted */
+    font-size: 1.5em;
     font-family: georgia, 'times new roman', serif;
     font-weight: bold;
 }
@@ -278,14 +278,12 @@ h4 {
     font-variant: small-caps;
 }
 
-/* TODO this level needs redesign, is just too small compared with regular text */
 h5 {
     font-variant: small-caps;
     font-weight: bold;
     font-size: .83em;
 }
 
-/* TODO this level needs redesign, is just too small compared with regular text */
 h6 {
     font-size: .75em;
 }
@@ -648,7 +646,7 @@ footer.columnContainer {
     font-style: italic;
 }
 
-ul.children { /* TODO: Fix hierarchical comments */
+ul.children {
     padding-left: 4em;
 }
 
@@ -735,7 +733,6 @@ ul.children { /* TODO: Fix hierarchical comments */
     margin-bottom: 1em !important;
 }
 
-/* TODO find out what this is used for */
 .gallery-caption { }
 
 .size-auto, 
@@ -936,6 +933,4 @@ article iframe, article video, article embed {
     .logoContainer {
         display: none;
     }
-
-    /* TODO needs work */
 }
