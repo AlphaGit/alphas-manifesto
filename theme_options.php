@@ -8,7 +8,7 @@ if (!function_exists("alphasmanifesto_admin_init")) {
 
 if (!function_exists("alphasmanifesto_admin_menu")) {
 	function alphasmanifesto_admin_menu() {
-		add_theme_page('Theme Options', 'Theme Options', 'edit_theme_options', 'alphasmanifesto_options_page', 'alphasmanifesto_options_page');
+		add_theme_page(__('Theme Options', 'alphas-manifesto'), __('Theme Options', 'alphas-manifesto'), 'edit_theme_options', 'alphasmanifesto_options_page', 'alphasmanifesto_options_page');
 	}
 }
 
@@ -19,10 +19,10 @@ if (!function_exists("alphasmanifesto_options_page")) {
 			$_REQUEST['settings-updated'] = false;
 	?>
 		<div>
-			<h1>Theme options</h1>
+			<h1><?php echo __('Theme options', 'alphas-manifesto') ?></h1>
 			<?php if ( false !== $_REQUEST['settings-updated'] ) { ?>
 				<div>
-					<p><em>Options saved</em></p>
+					<p><em><?php echo __('Options saved') ?></em></p>
 				</div>
 			<?php } ?>
 
@@ -31,10 +31,10 @@ if (!function_exists("alphasmanifesto_options_page")) {
 
 				<?php $show_author_name = get_option( 'show_author_name' ); ?>
 				<input id="show-author-name" name="show_author_name" type="checkbox" <?php checked( 'on', $show_author_name ) ?> />
-				<label for="show-author-name">Display the author name on posts</label>
+				<label for="show-author-name"><?php echo __('Display the author name on posts', 'alphas-manifesto') ?></label>
 
 				<br />
-				<input type="submit" value="Save" />
+				<input type="submit" value="<?php echo _x('Save', 'verb', 'alphas-manifesto') ?>" />
 			</form>
 		</div>
 		<?php
