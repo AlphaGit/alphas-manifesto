@@ -14,7 +14,7 @@
     --><div class="column colSize5 postContainer">
         <?php if(is_search()) { ?>
             <div class="columnContainer">
-                <p class="column colSize5 searchHeader">These are the search results for <em><?php the_search_query() ?></em>.</p>
+                <p class="column colSize5 searchHeader"><?php printf(__('These are the search results for <em>%1$s</em>.', 'alphas-manifesto'), get_search_query()) ?></p>
             </div>
         <?php } ?>
 
@@ -62,24 +62,22 @@
                         <div class="categories"><?php the_category(', ') ?></div>
                     <?php } ?>
 
-                    <div class="permalink"><a href="<?php the_permalink() ?>">(Permalink)</a></div>
+                    <div class="permalink"><a href="<?php the_permalink() ?>"><?php esc_html_e('(Permalink)', 'alphas-manifesto') ?></a></div>
                     <?php
                         $commentsNumber = get_comments_number();
                         $commentNumberText = $commentsNumber > 0
-                            ? number_format_i18n($commentsNumber)
-                                . " comment"
-                                . ($commentsNumber > 1 ? "s" : "")
-                            : "No comments yet.";
+                            ? sprintf(_n('%d comment', '%d comments', $commentsNumber, 'alphas-manifesto'), $commentsNumber)
+                            : __('No comments yet.', 'alphas-manifesto');
                     ?>
                     <div class="commentCount"><a href="<?php the_permalink() ?>#comments"><?php echo $commentNumberText ?></a></div>
 
                     <?php wp_link_pages(array(
-                        'before' => '<div class="postPages"><p>Pages:</p><ul>',
+                        'before' => '<div class="postPages"><p>'.__('Pages:', 'alphas-manifesto').'</p><ul>',
                         'after' => '</ul></div>',
                         'link_before' => '<li>',
                         'link_after' => '</li>',
                         'next_or_number' => 'number',
-                        'pagelink' => 'Page %'
+                        'pagelink' => __('Page %', 'alphas-manifesto')
                     )); ?>
 
                     <?php if(!is_page()) { ?>
