@@ -81,14 +81,14 @@
                     )); ?>
 
                     <?php if(!is_page()) { ?>
-                        <div class="tags"><p><?php echo get_the_tags() ? the_tags() : "(No tags)"; ?></p></div>
+                        <div class="tags"><p><?php echo get_the_tags() ? the_tags() : __('(No tags)', 'alphas-manifesto'); ?></p></div>
                     <?php } ?>
 
                     <?php if($show_author_name && !is_page()) { ?>
-                        <div class="author">by <span class="name"><?php the_author() ?></span></div>
+                        <div class="author"><?php printf(__('by %1$s', 'alphas-manifesto'), get_the_author()) ?></div>
                     <?php } ?>
 
-                    <?php edit_post_link('Edit...', '<div class="edit">', '</div>') ?>
+                    <?php edit_post_link(__('Edit...', 'alphas-manifesto'), '<div class="edit">', '</div>') ?>
                 </div>
             </article>
             <?php  endwhile; // while (have_posts())
@@ -106,7 +106,7 @@
     if (!is_singular() && !empty($postsNavLinkResult)) {
 ?>
     <footer class="columnContainer">
-        <p><?php posts_nav_link(" &bull; ", "&laquo; Next posts", "Previous posts &raquo;"); ?></p>
+        <p><?php posts_nav_link(" &bull; ", __('&laquo; Next posts', 'alphas-manifesto'), __('Previous posts &raquo;', 'alphas-manifesto')); ?></p>
     </footer>
 <?php
     }

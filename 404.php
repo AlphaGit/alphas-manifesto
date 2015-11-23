@@ -11,11 +11,10 @@
         --><div class="column colSize5 postContainer">
             <article class="post columnContainer">
                 <div class="postContent column colSize4">
-                    <h1>Oooops!</h1>
-                    <p class="subtitle">Nothing over here. Neither over there.</p>
-                    <p>There's nothing over here &ndash; maybe what you were looking for is somewhere else?</p>
-                    <p>You can <a href="<?php echo home_url() ?>">try visiting the main page</a>
-                        or using the following search form:</p>
+                    <h1><?php echo __('Oooops!', 'alphas-manifesto') ?></h1>
+                    <p class="subtitle"><?php echo __('Nothing over here. Neither over there.', 'alphas-manifesto') ?></p>
+                    <p><?php echo __('There\'s nothing over here &ndash; maybe what you were looking for is somewhere else?', 'alphas-manifesto') ?></p>
+                    <p><?php printf(__('You can <a href="%1$s">try visiting the main page</a> or using the following search form:', 'alphas-manifesto'), home_url()) ?></p>
                     <?php get_search_form(); ?>
                 </div>
             </article>
