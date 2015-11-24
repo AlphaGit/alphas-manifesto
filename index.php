@@ -11,7 +11,7 @@
             <?php dynamic_sidebar('left_sidebar');
         } ?>
     </div><!-- This comment is a fix for inline-block spaces, do not remove
-    --><div class="column colSize5 postContainer">
+    --><main class="column colSize5 postContainer">
         <?php if(is_search()) { ?>
             <div class="columnContainer">
                 <p class="column colSize5 searchHeader"><?php printf(__('These are the search results for <em>%1$s</em>.', 'alphas-manifesto'), get_search_query()) ?></p>
@@ -97,7 +97,7 @@
                 comments_template();
             }
         ?>
-    </div>
+    </main>
 </div>
 
 <?php
