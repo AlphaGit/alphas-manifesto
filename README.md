@@ -20,3 +20,12 @@ Libraries used in this theme:
 You can view a demo (with the unit test data) for this theme at [http://blog-qa.alphasmanifesto.com/](http://blog-qa.alphasmanifesto.com/)
 
 You can also view a full featured demo at my actual blog: [http://blog.alphasmanifesto.com](http://blog.alphasmanifesto.com)
+
+## Tested compatibility:
+
+- IE8+
+- Safari 5+
+- Android 4.4+
+- Firefox 30+
+- Safari iOS 7.1+
+- Chrome (old version something)+
