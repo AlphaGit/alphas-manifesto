@@ -13,7 +13,7 @@
                     <?php paginate_comments_links(); ?>
                 </div>
             <?php } else { ?>
-                <p class="comments-no-comments"><?php echo __('There are currently no comments for this post.)', 'alphas-manifesto') ?></p>
+                <p class="comments-no-comments"><?php echo __('(There are currently no comments for this post.)', 'alphas-manifesto') ?></p>
             <?php }
 
             if (!comments_open()) {
