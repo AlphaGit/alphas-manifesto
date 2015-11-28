@@ -812,6 +812,7 @@ article iframe, article video, article embed {
     .metadata div {
         border: none;
         display: inline;
+        margin-right: 0.5em;
     }
 
     /* display metadata content inline */
