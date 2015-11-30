@@ -411,6 +411,7 @@ header {
         border-top: 2px solid #ccc;
         padding-top: 1em;
         padding-bottom: 1em;
+        overflow: hidden;
     }
 
         .widget ul li:last-child {
