@@ -27,7 +27,6 @@
 	<?php
     if (!function_exists('alphasmanifesto_enqueue_scripts')) {
         function alphasmanifesto_enqueue_scripts() {
-            wp_enqueue_script('jquery');
             wp_enqueue_script('html5shiv', get_template_directory_uri() . '/html5shiv.min.js');
             if (is_singular() && comments_open() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
@@ -38,28 +37,66 @@
     <?php add_action('wp_enqueue_scripts', 'alphasmanifesto_enqueue_scripts'); ?>
     <?php wp_head(); ?>
     <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            // embed resize fix
-            $('article iframe, article video, article embed').each(function() {
-                var $embedded = $(this);
-                var declaredWidth = +$embedded.attr('width');
-                var declaredHeight = +$embedded.attr('height');
-                if (!!declaredWidth && !!declaredHeight) {
-                    $embedded.removeAttr('width');
-                    var actualWidth = $embedded.width();
-                    $embedded.attr('height', actualWidth / declaredWidth * declaredHeight);
-                }
-                $embedded.removeAttr('width');
-            });
+        // helper functions, used to avoid jQuery as a dependency
+        function onBodyReady(fn) {
+            if (document.readyState != 'loading') {
+                fn();
+            } else if (document.addEventListener) { // IE9+
+                document.addEventListener('DOMContentLoaded', fn);
+            } else { // IE8
+                document.attachEvent('onreadystatechange', function() {
+                    if (document.readyState != 'loading') fn();
+                });
+            }
+        }
 
-            // handle automated search on enter for search fields
-            $('.searchForm input.searchTerm').keyup(function(evt) {
-                if (event.which == 13) {
-                    evt.preventDefault();
-                    $(this).closest('.searchForm').submit();
-                }
+        function addEventListener(el, eventName, handler) {
+          if (el.addEventListener) {
+            el.addEventListener(eventName, handler);
+          } else {
+            el.attachEvent('on' + eventName, function(){
+              handler.call(el);
             });
-        });
+          }
+        }
+
+        // theme adjustments
+        function adjustEmbedSizes() {
+            var embeds = document.querySelectorAll('article iframe, article video, article embed');
+            for (var i = 0; i < embeds.length; i++) {
+                var embedded = embeds[i];
+                var declaredWidth = +embedded.getAttribute('width');
+                var declaredHeight = +embedded.getAttribute('height');
+                if (!!declaredHeight && !!declaredWidth) {
+                    embedded.removeAttr('width');
+                }
+            }
+        }
+
+        function searchParentsByTag(element, upperTagName) {
+            if (element.nodeName === upperTagName) return element;
+            if (element.nodeName === 'WINDOW') return null;
+            return searchParentsByTag(element.parentNode, upperTagName);
+        }
+
+        function searchBoxEventHandler(evt) {
+            if (evt.which == 13) {
+                evt.preventDefault();
+                var closesForm = searchParentsByTag(evt.target, 'FORM');
+                closesForm.submit();
+            }            
+        }
+
+        function bindEnterToSearchBox() {
+            var searchBoxes = document.querySelectorAll('.searchForm input.searchTerm');
+            for (var i = 0; i < searchBoxes.length; i++) {
+                var searchBox = searchBoxes[i];
+                addEventListener(searchBox, 'keyup', searchBoxEventHandler);
+            }
+        }
+
+        onBodyReady(adjustEmbedSizes);
+        onBodyReady(bindEnterToSearchBox);
     </script>
 </head>
 <body <?php body_class(); ?>>
