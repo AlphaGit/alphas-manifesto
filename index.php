@@ -56,8 +56,8 @@
                 --><div class="metadata column colSize1">
                     <?php if(!is_page()) { ?>
                         <time datetime="<?php the_time(DateTime::ISO8601) ?>" class="datetime dt-published">
-                            <span class="date"><?php the_time(get_option('date_format')); ?></span>
-                            <span class="time"><?php the_time() ?></span>
+                            <span class="date"><?php the_date(); ?></span>
+                            <span class="time"><?php the_time(); ?></span>
                         </time>
                         <div class="categories"><?php the_category(', ') ?></div>
                     <?php } ?>
