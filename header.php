@@ -20,21 +20,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-	<?php
-    if (!function_exists('alphasmanifesto_enqueue_scripts')) {
-        function alphasmanifesto_enqueue_scripts() {
-            wp_enqueue_script('html5shiv', get_template_directory_uri() . '/html5shiv.min.js');
-            if (is_singular() && comments_open() && get_option('thread_comments')) {
-                wp_enqueue_script('comment-reply');
-            }
-        }
-    }
-	?>
-    <?php add_action('wp_enqueue_scripts', 'alphasmanifesto_enqueue_scripts'); ?>
     <?php wp_head(); ?>
     <script type="text/javascript">
         (function(document) {
