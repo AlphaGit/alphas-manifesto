@@ -22,7 +22,7 @@ if (!function_exists("alphasmanifesto_options_page")) {
 			<h1><?php echo __('Theme options', 'alphas-manifesto') ?></h1>
 			<?php if ( false !== $_REQUEST['settings-updated'] ) { ?>
 				<div>
-					<p><em><?php echo __('Options saved') ?></em></p>
+					<p><em><?php echo __('Options saved', 'alphas-manifesto') ?></em></p>
 				</div>
 			<?php } ?>
 
