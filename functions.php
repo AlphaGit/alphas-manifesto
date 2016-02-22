@@ -19,8 +19,7 @@
 
     require_once 'theme_options.php';
 
-    add_action('admin_init', 'alphasmanifesto_admin_init');
-    add_action('admin_menu', 'alphasmanifesto_admin_menu');
+    add_action('customize_register', 'alphasmanifesto_customize_register');
 
     /********************************************************************/
     // Admin editor styles

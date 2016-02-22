@@ -1,43 +1,30 @@
 <?php
 
-if (!function_exists("alphasmanifesto_admin_init")) {
-	function alphasmanifesto_admin_init() {
-		register_setting('alphasmanifesto_options', 'show_author_name');
+if (!function_exists("alphasmanifesto_customize_register")) {
+	function alphasmanifesto_customize_register($wp_customize) {
+		$wp_customize->add_section('alphasmanifest-misc_section', array(
+			'title' => __('Miscelaneous', 'alphas-manifesto'),
+			'priority' => 160 // last
+		));
+
+		$wp_customize->add_setting('alphas-manifesto-show_author_name_setting', array(
+			'default' => true,
+			'type' => 'theme_mod',
+			'sanitize_callback' => 'wp_validate_boolean'
+		));
+
+		$wp_customize->add_control(new WP_Customize_Control(
+			$wp_customize,
+			'alphas-manifesto-show_author_name_control',
+			array(
+				'label' => __('Display the author name on posts', 'alphas-manifesto'),
+				'description' => __('Allows for author name to not be shown, for example, if there is only one author for the blog', 'alphas-manifesto'),
+				'type' => 'checkbox',
+				'settings' => 'alphas-manifesto-show_author_name_setting',
+				'section' => 'alphasmanifest-misc_section' // default section for this theme, automatically created by WordPress
+			)
+		));
 	}
 }
 
-if (!function_exists("alphasmanifesto_admin_menu")) {
-	function alphasmanifesto_admin_menu() {
-		add_theme_page(__('Theme Options', 'alphas-manifesto'), __('Theme Options', 'alphas-manifesto'), 'edit_theme_options', 'alphasmanifesto_options_page', 'alphasmanifesto_options_page');
-	}
-}
-
-if (!function_exists("alphasmanifesto_options_page")) {
-	function alphasmanifesto_options_page() {
-		//global $select_options;
-		if ( ! isset( $_REQUEST['settings-updated'] ) )
-			$_REQUEST['settings-updated'] = false;
-	?>
-		<div>
-			<h1><?php echo __('Theme options', 'alphas-manifesto') ?></h1>
-			<?php if ( false !== $_REQUEST['settings-updated'] ) { ?>
-				<div>
-					<p><em><?php echo __('Options saved', 'alphas-manifesto') ?></em></p>
-				</div>
-			<?php } ?>
-
-			<form method="post" action="options.php">
-				<?php settings_fields( 'alphasmanifesto_options' ); ?>
-
-				<?php $show_author_name = get_option( 'show_author_name' ); ?>
-				<input id="show-author-name" name="show_author_name" type="checkbox" <?php checked( 'on', $show_author_name ) ?> />
-				<label for="show-author-name"><?php echo __('Display the author name on posts', 'alphas-manifesto') ?></label>
-
-				<br />
-				<input type="submit" value="<?php echo _x('Save', 'verb', 'alphas-manifesto') ?>" />
-			</form>
-		</div>
-		<?php
-	}
-}
 ?>
