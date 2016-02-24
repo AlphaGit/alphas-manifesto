@@ -1,7 +1,7 @@
 alphas-manifesto
 ================
 
-Wordpress theme for Alpha's Manifesto. You can see it live working on http://blog.alphasmanifesto.com. 
+WordPress theme for Alpha's Manifesto. You can see it live working on http://blog.alphasmanifesto.com. 
 
 ## Custom fields
 

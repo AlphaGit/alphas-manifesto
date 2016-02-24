@@ -21,7 +21,7 @@ if (!function_exists("alphasmanifesto_customize_register")) {
 				'description' => __('Allows for author name to not be shown, for example, if there is only one author for the blog', 'alphas-manifesto'),
 				'type' => 'checkbox',
 				'settings' => 'alphas-manifesto-show_author_name_setting',
-				'section' => 'alphas-manifest-misc_section' // default section for this theme, automatically created by WordPress
+				'section' => 'alphas-manifest-misc_section'
 			)
 		));
 	}
