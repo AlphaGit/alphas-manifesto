@@ -6,7 +6,7 @@ Author: Alpha
 Author URI: http://alphasmanifesto.com/
 Version: 0.3
 Text Domain: alphas-manifesto
-Tags: black, gray, white, light, one-column, left-sidebar, fixed-layout, responsive-layout, featured-images, sticky-post, theme-options, threaded-comments, custom-background, responsive-layout
+Tags: black, gray, white, light, one-column, editor-style, left-sidebar, responsive-layout, featured-images, sticky-post, theme-options, threaded-comments, custom-background
 
 License: MIT
 License URI:
@@ -472,8 +472,30 @@ header {
     }
 
 .sticky {
-    background-color: #F9FBFC;
+    border: 2px solid #CCC;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: relative;
 }
+
+    .sticky .column.colSize4 {
+        width: 740px;
+    }
+
+    .sticky:after {
+        top: 0.2em;
+        right: 0;
+        font-size: 5em;
+        color: #CCC;
+        content: "\1f588";
+        position: absolute;
+        /* Flipping it so that it looks to the right */
+        -moz-transform: scaleX(-1);    /* Gecko */
+        -o-transform: scaleX(-1);      /* Opera */
+        -webkit-transform: scaleX(-1); /* Webkit */
+        transform: scaleX(-1);         /* Standard */
+        filter: FlipH;                 /* IE 6/7/8 */
+      }
 
 /* post metadata */
 
