@@ -33,6 +33,5 @@
 
     wp_footer(); 
 ?>
-<!-- Theme: alphasmanifesto - https://github.com/alphagit/alphasmanifesto -->
 </body>
 </html>
