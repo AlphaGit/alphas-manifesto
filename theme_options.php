@@ -2,7 +2,7 @@
 
 if (!function_exists("alphasmanifesto_customize_register")) {
 	function alphasmanifesto_customize_register($wp_customize) {
-		$wp_customize->add_section('alphasmanifest-misc_section', array(
+		$wp_customize->add_section('alphas-manifesto-misc_section', array(
 			'title' => __('Miscelaneous', 'alphas-manifesto'),
 			'priority' => 160 // last
 		));
@@ -21,7 +21,7 @@ if (!function_exists("alphasmanifesto_customize_register")) {
 				'description' => __('Allows for author name to not be shown, for example, if there is only one author for the blog', 'alphas-manifesto'),
 				'type' => 'checkbox',
 				'settings' => 'alphas-manifesto-show_author_name_setting',
-				'section' => 'alphasmanifest-misc_section' // default section for this theme, automatically created by WordPress
+				'section' => 'alphas-manifest-misc_section' // default section for this theme, automatically created by WordPress
 			)
 		));
 	}

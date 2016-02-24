@@ -11,8 +11,8 @@
 
     add_theme_support('custom-background', array('default-color' => 'white'));
 
-    add_image_size('alphasmanifesto-logo-size', 170, 100);
-    add_theme_support('site-logo', array('size' => 'alphasmanifesto-logo-size'));
+    add_image_size('alphas-manifesto-logo-size', 170, 100);
+    add_theme_support('site-logo', array('size' => 'alphas-manifesto-logo-size'));
 
     /********************************************************************/
     // Custom theme options
