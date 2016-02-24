@@ -54,6 +54,8 @@
     if (!function_exists('alphasmanifesto_enqueue_scripts_and_styles')) {
         function alphasmanifesto_enqueue_scripts_and_styles() {
             wp_enqueue_style('style', get_stylesheet_uri());
+
+            wp_enqueue_script('alphas-manifesto', get_template_directory_uri() . '/alphas-manifesto.js');
             wp_enqueue_script('html5shiv', get_template_directory_uri() . '/html5shiv.min.js');
             
             if (is_singular() && comments_open() && get_option('thread_comments')) {
