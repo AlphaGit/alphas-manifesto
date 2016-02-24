@@ -1,7 +1,7 @@
 <?php
     get_header();
 
-    $show_author_name = get_theme_mod( 'alphas-manifesto-show_author_name_setting' );
+    $show_author_name = get_theme_mod( 'alphas-manifesto-show_author_name_setting', true );
 ?>
 <div class="columnContainer">
     <div class="column colSize1 leftSidebar">
