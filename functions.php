@@ -26,7 +26,7 @@
 
     if(!function_exists("alphasmanifesto_add_editor_styles")) {
         function alphasmanifesto_add_editor_styles() {
-            add_editor_style('style.css');
+            add_editor_style('editor-style.css');
         }
     }
 

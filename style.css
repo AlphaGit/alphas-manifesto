@@ -749,10 +749,6 @@ ul.children {
     z-index: 100000; /* Above WP toolbar. */
 }
 
-.wp-editor {
-    margin: 1em;
-}
-
 .gallery {
     /* using important rules because WordPress writes inline styles for galleries and while
     they can be deactivated, that will remove ALL styles that WordPress uses for them*/
