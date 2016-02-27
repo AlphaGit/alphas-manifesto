@@ -17,7 +17,7 @@
     /********************************************************************/
     // Custom theme options
 
-    require_once 'theme_options.php';
+    require_once 'theme-options.php';
 
     add_action('customize_register', 'alphasmanifesto_customize_register');
 
