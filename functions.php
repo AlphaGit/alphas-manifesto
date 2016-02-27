@@ -66,4 +66,14 @@
 
     add_action('wp_enqueue_scripts', 'alphasmanifesto_enqueue_scripts_and_styles');
 
+    /********************************************************************/
+    // Theme text domain
+
+    if (!function_exists('alphasmanifesto_after_theme_setup')) {
+        function alphasmanifesto_after_theme_setup() {
+            load_theme_textdomain('alphas-manifesto');
+        }
+    }
+
+    add_action('after_setup_theme', 'alphasmanifesto_after_theme_setup');
 ?>
