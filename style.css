@@ -470,30 +470,24 @@ header {
     }
 
 .sticky {
-    border: 2px solid #CCC;
+    border: 2px solid #BBB;
     padding-left: 0.5em;
     padding-right: 0.5em;
     position: relative;
+    background-color: #BBB;
+    -moz-box-shadow: 0 0 5px 5px #BBB;
+    -webkit-box-shadow: 0 0 5px 5px #BBB;
+    box-shadow: 0 0 5px 5px #BBB;
+    margin-right: 5px;
 }
 
-    .sticky .column.colSize4 {
-        width: 740px;
+    .sticky .metadata div {
+        border-color: #EBEBEB;
     }
 
-    .sticky:after {
-        top: 0.2em;
-        right: 0;
-        font-size: 5em;
-        color: #CCC;
-        content: "\1f588";
-        position: absolute;
-        /* Flipping it so that it looks to the right */
-        -moz-transform: scaleX(-1);    /* Gecko */
-        -o-transform: scaleX(-1);      /* Opera */
-        -webkit-transform: scaleX(-1); /* Webkit */
-        transform: scaleX(-1);         /* Standard */
-        filter: FlipH;                 /* IE 6/7/8 */
-      }
+    .sticky .column.colSize4 {
+        width: 735px;
+    }
 
 /* post metadata */
 
