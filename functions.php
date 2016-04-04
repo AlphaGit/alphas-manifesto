@@ -7,17 +7,6 @@
     add_action('customize_register', 'alphasmanifesto_customize_register');
 
     /********************************************************************/
-    // Admin editor styles
-
-    if(!function_exists("alphasmanifesto_add_editor_styles")) {
-        function alphasmanifesto_add_editor_styles() {
-            add_editor_style('editor-style.css');
-        }
-    }
-
-    add_action('admin_init', 'alphasmanifesto_add_editor_styles');
-
-    /********************************************************************/
     // Widget support
 
     if(!function_exists('alphasmanifesto_init_widgets')) {
@@ -74,6 +63,8 @@
             add_theme_support('site-logo', array('size' => 'alphas-manifesto-logo-size'));
 
             load_theme_textdomain('alphas-manifesto');
+  
+            add_editor_style('editor-style.css');
         }
     }
 
