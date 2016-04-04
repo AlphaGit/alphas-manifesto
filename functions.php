@@ -1,19 +1,4 @@
 <?php
-    if (!isset($content_width)) {
-        $content_width = 745;
-    }
-
-    add_theme_support('automatic-feed-links');
-    add_theme_support('title-tag');
-
-    add_theme_support('post-thumbnails');
-    add_image_size('full-size', $content_width, 9999);
-
-    add_theme_support('custom-background', array('default-color' => 'white'));
-
-    add_image_size('alphas-manifesto-logo-size', 170, 100);
-    add_theme_support('site-logo', array('size' => 'alphas-manifesto-logo-size'));
-
     /********************************************************************/
     // Custom theme options
 
@@ -67,10 +52,27 @@
     add_action('wp_enqueue_scripts', 'alphasmanifesto_enqueue_scripts_and_styles');
 
     /********************************************************************/
-    // Theme text domain
+    // Theme text domain and set up
 
     if (!function_exists('alphasmanifesto_after_theme_setup')) {
         function alphasmanifesto_after_theme_setup() {
+            global $content_width;
+
+            if (!isset($content_width)) {
+                $content_width = 745;
+            }
+
+            add_theme_support('automatic-feed-links');
+            add_theme_support('title-tag');
+
+            add_theme_support('post-thumbnails');
+            add_image_size('full-size', $content_width, 9999);
+
+            add_theme_support('custom-background', array('default-color' => 'white'));
+
+            add_image_size('alphas-manifesto-logo-size', 170, 100);
+            add_theme_support('site-logo', array('size' => 'alphas-manifesto-logo-size'));
+
             load_theme_textdomain('alphas-manifesto');
         }
     }
