@@ -89,7 +89,7 @@
                         <div class="author"><?php printf(__('by %1$s', 'alphas-manifesto'), get_the_author()) ?></div>
                     <?php } ?>
 
-                    <?php edit_post_link(__('Edit...', 'alphas-manifesto'), '<div class="edit">', '</div>') ?>
+                    <?php edit_post_link(__('Edit&hellip;', 'alphas-manifesto'), '<div class="edit">', '</div>') ?>
                 </div>
             </article>
             <?php  endwhile; // while (have_posts())
