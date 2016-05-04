@@ -7,7 +7,7 @@
 
             <?php if(have_comments()) { ?>
                 <ul class="commentList">
-                    <?php wp_list_comments(array('style' => 'ul')); ?>
+                    <?php wp_list_comments(array('style' => 'ul', 'avatar_size' => 100)); ?>
                 </ul>
                 <div class="commentPagination">
                     <?php paginate_comments_links(); ?>
