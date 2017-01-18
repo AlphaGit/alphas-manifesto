@@ -3,6 +3,8 @@ alphas-manifesto
 
 WordPress theme for Alpha's Manifesto. You can see it live working on [http://blog.alphasmanifesto.com](http://blog.alphasmanifesto.com).
 
+It can be downloaded from the [Wordpress Theme Directory](https://wordpress.org/themes/alphas-manifesto/).
+
 ## Custom fields
 
 This theme makes use of the `subtitle` custom field on each of the posts. The subtitle appears next to the title of each of the posts, and as a sub-header to the page when seeing a post page. If this field is left empty, nothing is shown.
