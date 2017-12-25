@@ -964,7 +964,8 @@ article iframe, article video, article embed {
         box-shadow: none;
    }
 
-        header h1 {
+        header h1,
+        header h1 a {
             color: black;
         }
 
