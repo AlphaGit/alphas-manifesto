@@ -947,7 +947,40 @@ article iframe, article video, article embed {
 @media print {
     /* hide stuff that's no use when printed or that takes too much space */
     label.menuSwitcher,
-    .logoContainer {
-        display: none;
+    .logoContainer,
+    .leftSidebar,
+    .comment-respond,
+    .searchContainer,
+    .reply,
+    .permalink,
+    footer {
+        display: none !important;
+    }
+
+    header {
+        background: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+   }
+
+        header h1 {
+            color: black;
+        }
+
+        header p.subtitle {
+            color: #333;
+        }
+
+    pre, p, blockquote, ul, li {
+        page-break-inside: avoid;
+    }
+
+    .postContent.column.colSize4 {
+        width: auto;
+    }
+
+    .column {
+        display: inline;
     }
 }
